@@ -1,0 +1,157 @@
+---
+title       : Abundancia
+subtitle    : Entendiendo la historia
+author      : Diego J. Lizcano
+job         : ULEAM, Manta
+logo        : TSG.png
+biglogo     : tsg_logo.gif
+mylogo      : http://olea.org/ilustraciones/fedora-logo-icon.png
+twitter     : dlizcano
+  
+  
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, widgets: [mathjax, bootstrap, quiz]]# 
+mode        : selfcontained # {standalone, draft}
+assets      : {js: 'test.js'}
+
+github      : {user: dlizcano, repo: IntroOccuPresent}
+knit        : slidify::knit2slides
+---
+
+
+# About me
+
+<img src="assets/img/me.jpg" align="right" />
+
+> - http://dlizcano.github.io
+> - De: Cucuta, Colombia
+> - Biólogo (Uniandes, Bogotá)
+> - DICE, University of Kent 
+> - Actualmente en: ULEAM, Manta
+> - [Fauna de manabi](https://faunamanabi.github.io)
+> - [TEAM Network](http://www.teamnetwork.org/user/1082)
+> - [IUCN/SSC Tapir Specialist Group](http://www.tapirs.org/committees/index.html)
+> - Mountain Tapir 
+
+---
+
+---.segue bg:black
+
+<q> 
+La Ecología:  Estudio de las interacciones que determinan la _distribución y abundancia_.
+</q> 
+
+
+### C. Krebs  
+
+---
+
+# Contar Animales
+![Obtener densidad](assets/img/pinguinos.jpg)  
+  
+#### Facil para animales que conspicuos que se agrupan.
+
+---
+
+# Contar Animales
+![Obtener densidad](assets/img/432.jpg)
+
+#### No tan facil si no se agrupan. Metodos de Captura - Marca - Recaptura. Distance
+
+---
+
+# Contar Animales
+![Obtener densidad](assets/img/Moose-capture_011.jpg)
+
+#### Para algunas especies es engorroso, poco practico y muy costoso
+
+---.segue bg:green
+
+## Abundancia relativa: Una variable indicadora del estado de la población
+
+---
+
+## Los muestreos no son infalibles
+
+<iframe src='http://i.giphy.com/nejXhE8hnCiQ0.gif' width=800px height=350px>
+</iframe> 
+
+#### La detectabilidad depende de:
+
+> - 1. Las condiciones del muestreo (clima, hora)
+> - 2. La habilidad del observador (sensor)
+> - 3. La biologia de la especie que se muestrea
+  
+> - Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.
+
+---
+
+# Mackenzie et al 2002, 2006 al rescate
+
+---
+
+# Libro y programa presence
+
+![](mackenziebook.jpg)
+
+Populariza la ocupacion ($\psi$) como proxi de la abundancia teniendo en cuenta la detectabilidad (p)
+
+---
+
+# La ocupación ($\psi$)
+
+Proporción del área muestreada que esta ocupada por la especie.  
+
+Visitando el sitio varias veces puedo estar mas seguro. 
+
+
+```{r eval=TRUE, echo=FALSE}
+library(knitr)
+muestreo<-c("visita_1","visita_2", "visita_3", "visita_4")
+Sitio<-c("sitio_1", "sitio_2", "sitio_3", "sitio_X")
+mat<-matrix(c(1,0,1,0,
+              0,0,1,0,
+              0,0,0,0,
+              1,0,0,0),nrow=4,ncol = 4)
+colnames(mat)<-muestreo
+rownames(mat)<-Sitio
+kable(mat,booktabs=TRUE,longtable=TRUE)
+```
+
+---
+
+# Calculo de ($\psi$) y p
+
+- Ejemplo
+
+<div class="columns-2">
+```{r eval=TRUE, echo=FALSE}
+library(knitr)
+muestreo<-c("v_1","v_2", "v_3", "v_4")
+Sitio<-c("sitio_1", "sitio_2", "sitio_3", "sitio_X")
+mat<-matrix(c(1,0,1,0,
+              0,0,1,0,
+              0,0,0,0,
+              1,0,0,0),nrow=4,ncol = 4)
+colnames(mat)<-muestreo
+rownames(mat)<-Sitio
+kable(mat,booktabs=TRUE)
+```
+
+---
+
+# Read-And-Delete
+
+1. Edit YAML front matter
+2. Write using R Markdown
+3. Use an empty line followed by three dashes to separate slides!
+
+--- .class #id 
+
+## Slide 2
+
+
+
+
