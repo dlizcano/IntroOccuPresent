@@ -1,2 +1,2 @@
 # IntroOccuPresent
-Presentación de Curso Ocupación a CS Quito
+Presentación de Curso Ocupación a WCS Quito
