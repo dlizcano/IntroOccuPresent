@@ -95,7 +95,7 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
  
 </p>
 
-<h2>C. Krebs</h2>
+<h3>C. Krebs</h3>
 
   </article>
   <!-- Presenter Notes -->
@@ -103,15 +103,16 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Distribución y abundancia</h2>
+    <h1>Distribución y abundancia</h1>
   </hgroup>
   <article data-timings="">
-    <h3>Donde estan y cuantos son</h3>
+    <h2>Donde están y cuantos son ?</h2>
 
-<p>Relacionado con el problema de contar animales en ecología</p>
+<h3>Relacionado con el problema de contar animales en ecología</h3>
 
 <ul class = "build incremental">
-<li>A diferencia de las plantas. Los animales se mueven!</li>
+<li>A diferencia de las plantas... </li>
+<li>Los animales se mueven!</li>
 </ul>
 
   </article>
@@ -187,7 +188,7 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-9" style="background:black;">
+<slide class="segue" id="slide-9" style="background:#202020;">
   <hgroup>
     <h2>Mackenzie et al 2002, 2003, 2006 al rescate</h2>
   </hgroup>
@@ -451,7 +452,7 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
 
 <slide class="" id="slide-15" style="background:;">
   <hgroup>
-    <h2>Un modelo jerarquico</h2>
+    <h2>Un modelo jerarquico (Bayesiano)</h2>
   </hgroup>
   <article data-timings="">
     <p><img src="assets/img/Occu_Bayes.png" alt="Full Occu Bayes"></p>
@@ -472,10 +473,11 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
   <h3>ML</h3>
 
 <ul class = "build incremental">
-<li>Paquete unmarked en R</li>
+<li>Paquete <a href="https://cran.r-project.org/web/packages/unmarked/index.html">unmarked</a> en R</li>
 <li>Admite seleccion &quot;automatica&quot; de modelos con AIC</li>
 <li>Problemas con matrices que tienen muchos NAs</li>
 <li>Problema Hesian y estimados ok.</li>
+<li>Dificultad de 1 a 10: 3 si ya sabes R.</li>
 </ul>
 
 </div>
@@ -487,6 +489,7 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
 <li>La seleccion de modelos no es tan sencilla, BIC no es adecuado</li>
 <li>No tiene tantos problemas con muchos NAs en la matriz<br></li>
 <li>Los estimados son mas precisos.</li>
+<li>Dificultad de 1 a 10: 7 si ya sabes R.</li>
 </ul>
 
 </div>
@@ -494,7 +497,78 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-17" style="background:;">
+<slide class="segue" id="slide-17" style="background:#202020;">
+  <hgroup>
+    <h2>De donde vienen los modelos jerarquicos?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2><a href="http://www.pwrc.usgs.gov/staff/profiles/documents/royle.htm">Andy Royle</a></h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="http://www.pwrc.usgs.gov/staff/profiles/images/royle.jpg" alt="Andy Royle"></p>
+
+<p>Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupacion.</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Autor del libro azul (2008).</h3>
+
+<p><img src="https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780123740977.jpg" alt="libro azul"></p>
+
+<p>Libro de nivel avanzado con muchos detalles, formulas, ejemplos y codigo en R y lenguage BUGS.</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Libro de la libelula (2015).</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>Recientemente publicado con <a href="http://store.elsevier.com/Marc-Kery/ELS_1059944/">Marc Kery</a>.</h4>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="https://images-na.ssl-images-amazon.com/images/I/513ulKHhAKL._SX404_BO1,204,203,200_.jpg" alt="libro libelula"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tutorial, comenzando con un nivel basico de R hasta modelos avanzados y su implementacion en R y lenguaje BUGS.  </p>
+
+<p><a class="btn btn-large btn-danger" rel="popover" data-content="No. Hay modelos jerarquicos que no son Bayesianos." data-original-title="A Title" id='example'>Son todos los modelos jerarquicos Bayesianos ?</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="alfinal" style="background:url(https://pixabay.com/get/e131b70d2fe90021d85a5840981318c3fe76e6d31fb816429df8c6/baby-84627_1280.jpg);">
+  <hgroup>
+    <h2>Manos a la obra!</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>Primeros pasos en</h4>
+
+<p><img src="https://www.r-project.org/Rlogo.png" alt="Coding now"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="towork" style="background:url(https://pixabay.com/get/ec3cb20c29f71c22d2524518a33219c8b66ae3d11fb7184696f5c170/children-593313_1280.jpg);">
+  <hgroup>
+    <h2>Al final: Modelo de ocupacion Bayesiano espacial.</h2>
+  </hgroup>
   <article data-timings="">
     
   </article>
@@ -591,7 +665,7 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Un modelo jerarquico'>
+        data-slide=15 title='Un modelo jerarquico (Bayesiano)'>
          15
       </a>
     </li>
@@ -603,8 +677,32 @@ L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='NA'>
+        data-slide=17 title='De donde vienen los modelos jerarquicos?'>
          17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='<a href="http://www.pwrc.usgs.gov/staff/profiles/documents/royle.htm">Andy Royle</a>'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Libro de la libelula (2015).'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Manos a la obra!'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Al final: Modelo de ocupacion Bayesiano espacial.'>
+         21
       </a>
     </li>
   </ul>
