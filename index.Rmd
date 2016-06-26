@@ -41,7 +41,7 @@ knit        : slidify::knit2slides
 ---.segue bg:black
 
 <q> 
-La Ecología:  Estudio de las interacciones que determinan la _distribución y abundancia_.
+La Ecología:  Estudio de las interacciones que determinan la __distribución y abundancia__.
 </q> 
 
 <p> 
