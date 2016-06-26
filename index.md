@@ -7,12 +7,11 @@ logo        : TSG.png
 biglogo     : tsg_logo.gif
 mylogo      : http://olea.org/ilustraciones/fedora-logo-icon.png
 twitter     : dlizcano
-  
-  
+license     : by-nc-sa  
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, widgets: [mathjax, bootstrap, quiz]]# 
+widgets     : [mathjax, bootstrap, quiz]# 
 mode        : selfcontained # {standalone, draft}
 assets      : {js: 'test.js'}
 
@@ -43,6 +42,9 @@ knit        : slidify::knit2slides
 La Ecología:  Estudio de las interacciones que determinan la _distribución y abundancia_.
 </q> 
 
+<p> 
+ 
+</p>
 
 ### C. Krebs  
 
@@ -75,72 +77,170 @@ La Ecología:  Estudio de las interacciones que determinan la _distribución y a
 
 ## Los muestreos no son infalibles
 
-<iframe src='http://i.giphy.com/nejXhE8hnCiQ0.gif' width=800px height=350px>
-</iframe> 
+![Hiding cat](http://i.giphy.com/nejXhE8hnCiQ0.gif)
+
 
 #### La detectabilidad depende de:
 
 > - 1. Las condiciones del muestreo (clima, hora)
 > - 2. La habilidad del observador (sensor)
-> - 3. La biologia de la especie que se muestrea
-  
+> - 3. La biología de la especie que se muestrea
 > - Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.
 
+---.segue bg:black
+
+## Mackenzie et al 2002, 2003, 2006 al rescate
+
+--- &twocol
+
+## Libro y programa presence
+
+*** =left
+
+![Mackenzie book](assets/img/mackenziebook.jpg)
+
+*** =right
+
+![presence software](http://www.mbr-pwrc.usgs.gov/software/doc/presence/falsePos.jpg)
+
+Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta la detectabilidad ($p$)
+
 ---
 
-# Mackenzie et al 2002, 2006 al rescate
+## La ocupación ($\psi$) y la probabilidad de detección ($p$)
 
----
-
-# Libro y programa presence
-
-![](mackenziebook.jpg)
-
-Populariza la ocupacion ($\psi$) como proxi de la abundancia teniendo en cuenta la detectabilidad (p)
-
----
-
-# La ocupación ($\psi$)
-
-Proporción del área muestreada que esta ocupada por la especie.  
-
-Visitando el sitio varias veces puedo estar mas seguro. 
+> - 1. Proporción del área muestreada que esta ocupada por la especie.
+> - 2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie.  
+  
+  
+Así debería verse una tabla de datos con muestreos repetidos.
+  
 
 
-
-|        | visita_1| visita_2| visita_3| visita_4|
+|        | visita 1| visita 2| visita 3| visita 4|
 |:-------|--------:|--------:|--------:|--------:|
-|sitio_1 |        1|        0|        0|        1|
-|sitio_2 |        0|        0|        0|        0|
-|sitio_3 |        1|        1|        0|        0|
-|sitio_X |        0|        0|        0|        0|
+|sitio 1 |        1|        0|        0|        1|
+|sitio 2 |        0|        0|        0|        0|
+|sitio 3 |        1|        1|        0|        0|
+|sitio X |        0|        0|        0|        0|
+
+
+
+
+--- &twocol
+
+## Ejemplo del calculo de $\psi$ y $p$
+  
+### Método frecuentista (Máxima verosimilitud).
+  
+  
+*** =left
+
+
+|    | v 1| v 2| v 3| v 4|
+|:---|---:|---:|---:|---:|
+|s 1 |   1|   0|   0|   1|
+|s 2 |   0|   0|   0|   0|
+|s 3 |   1|   1|   0|   0|
+|s X |   0|   0|   0|   0|
+
+*** =right
+
+
+| **Historias de detección**                            |
+|-------------------------------------------------------|
+| Pr($H_{1}$=1001)= $\psi$ × p1(1–p2)(1–p3)p4           |
+| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |
+| Pr($H_{3}$=1100)= $\psi$ × p1p2(1–p3)(1–p4)           |  
+| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |  
+
+  
+
+
 
 ---
 
-# Calculo de ($\psi$) y p
+## Estas Historias se combinan en un solo modelo de maxima verosimilitud
 
-- Ejemplo
+| **Historias de detección**                            |
+|-------------------------------------------------------|
+| Pr($H_{1}$=1001)= $\psi$ × p1(1–p2)(1–p3)p4           |
+| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |
+| Pr($H_{3}$=1100)= $\psi$ × p1p2(1–p3)(1–p4)           |  
+| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |  
 
-<div class="columns-2">
+<br />
+<br />
 
-|        | v_1| v_2| v_3| v_4|
-|:-------|---:|---:|---:|---:|
-|sitio_1 |   1|   0|   0|   1|
-|sitio_2 |   0|   0|   0|   0|
-|sitio_3 |   1|   1|   0|   0|
-|sitio_X |   0|   0|   0|   0|
+$$
+\begin{aligned}
+L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
+\end{aligned}
+$$
+  
+  
+> - El modelo admite incorporar covariables para explicar $\psi$ y $p$
+
+--- &twocol
+
+## El mismo ejemplo del calculo de $\psi$ y $p$
+  
+### Método Bayesiano.
+  
+  
+*** =left
+
+
+|    | v 1| v 2| v 3| v 4|
+|:---|---:|---:|---:|---:|
+|s 1 |   1|   0|   0|   1|
+|s 2 |   0|   0|   0|   0|
+|s 3 |   1|   1|   0|   0|
+|s X |   0|   0|   0|   0|
+
+*** =right
+ 
+Es importante entender que hay dos procesos que se pueden modelar de forma jerarquica.
+  
+> - El proceso ecologico ($\psi$) sigue una distribucion Bernoulli.
+> - El modelo de observacion ($p$) sigue una distribucion Bernoulli.
+> - La probabilidad de observar la especie dada que esta presente: $p$=Pr($y_{i}$=1 $\mid$ $z_{i}$=1)
+> - La probabilidad de ocurrencia: $\psi$ =Pr($z_{i}$=1)
 
 ---
 
-# Read-And-Delete
+## Un modelo jerarquico 
+  
+![Full Occu Bayes](assets/img/Occu_Bayes.png)
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+### Admite covariables
 
---- .class #id 
+--- &twocol
 
-## Slide 2
+## Cual uso, Maxima verosimilitud o Bayesiano?
+  
+  
+*** =left
+
+### ML
+
+> - Paquete unmarked en R
+> - Admite seleccion $automatica$ de modelos con AIC
+> - Problemas con matrices que tienen muchos NAs
+> - Problema Hesian y estimados ok.
+
+*** =right
+ 
+### Bayesiano
+
+> - Lenguaje BUGS o Stan llamado desde R
+> - La seleccion de modelos no es tan sencilla, BIC no es adecuado
+> - No tiene problemas con muchos NAs en la matriz  
+> - Los estimados son mas precisos.
+
+---
+
+
 
 
 

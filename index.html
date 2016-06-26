@@ -13,7 +13,9 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -50,6 +52,11 @@
      Download
     </a>
   <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
 </slide>
     
 
@@ -89,6 +96,10 @@
     <p><q> 
 La Ecología:  Estudio de las interacciones que determinan la <em>distribución y abundancia</em>.
 </q> </p>
+
+<p> 
+ 
+</p>
 
 <h3>C. Krebs</h3>
 
@@ -150,27 +161,24 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
     <h2>Los muestreos no son infalibles</h2>
   </hgroup>
   <article data-timings="">
-    <iframe src='http://i.giphy.com/nejXhE8hnCiQ0.gif' width=800px height=350px>
-</iframe> 
+    <p><img src="http://i.giphy.com/nejXhE8hnCiQ0.gif" alt="Hiding cat"></p>
 
 <h4>La detectabilidad depende de:</h4>
 
 <ul class = "build incremental">
 <li>1. Las condiciones del muestreo (clima, hora)</li>
 <li>2. La habilidad del observador (sensor)</li>
-<li><ol>
-<li>La biologia de la especie que se muestrea</li>
-</ol></li>
-<li><p>Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.</p></li>
+<li>3. La biología de la especie que se muestrea</li>
+<li>Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="segue" id="slide-9" style="background:black;">
   <hgroup>
-    <h1>Mackenzie et al 2002, 2006 al rescate</h1>
+    <h2>Mackenzie et al 2002, 2003, 2006 al rescate</h2>
   </hgroup>
   <article data-timings="">
     
@@ -180,58 +188,68 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
 
 <slide class="" id="slide-10" style="background:;">
   <hgroup>
-    <h1>Libro y programa presence</h1>
+    <h2>Libro y programa presence</h2>
   </hgroup>
   <article data-timings="">
-    <p><img src="mackenziebook.jpg" alt=""></p>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/mackenziebook.jpg" alt="Mackenzie book"></p>
 
-<p>Populariza la ocupacion (\(\psi\)) como proxi de la abundancia teniendo en cuenta la detectabilidad (p)</p>
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://www.mbr-pwrc.usgs.gov/software/doc/presence/falsePos.jpg" alt="presence software"></p>
 
+<p>Populariza la ocupación (\(\psi\)) como proxi de la abundancia teniendo en cuenta la detectabilidad (\(p\))</p>
+
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h1>La ocupación (\(\psi\))</h1>
+    <h2>La ocupación (\(\psi\)) y la probabilidad de detección (\(p\))</h2>
   </hgroup>
   <article data-timings="">
-    <p>Proporción del área muestreada que esta ocupada por la especie.  </p>
+    <ul class = "build incremental">
+<li>1. Proporción del área muestreada que esta ocupada por la especie.</li>
+<li>2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie.<br></li>
+</ul>
 
-<p>Visitando el sitio varias veces puedo estar mas seguro. </p>
+<p>Así debería verse una tabla de datos con muestreos repetidos.</p>
 
 <table><thead>
 <tr>
 <th align="left"></th>
-<th align="right">visita_1</th>
-<th align="right">visita_2</th>
-<th align="right">visita_3</th>
-<th align="right">visita_4</th>
+<th align="right">visita 1</th>
+<th align="right">visita 2</th>
+<th align="right">visita 3</th>
+<th align="right">visita 4</th>
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">sitio_1</td>
+<td align="left">sitio 1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 </tr>
 <tr>
-<td align="left">sitio_2</td>
+<td align="left">sitio 2</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
 <tr>
-<td align="left">sitio_3</td>
+<td align="left">sitio 3</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
 <tr>
-<td align="left">sitio_X</td>
+<td align="left">sitio X</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -245,47 +263,44 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
 
 <slide class="" id="slide-12" style="background:;">
   <hgroup>
-    <h1>Calculo de (\(\psi\)) y p</h1>
+    <h2>Ejemplo del calculo de \(\psi\) y \(p\)</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Ejemplo</li>
-</ul>
+    <h3>Método frecuentista (Máxima verosimilitud).</h3>
 
-<p><div class="columns-2"></p>
-
-<table><thead>
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
 <tr>
 <th align="left"></th>
-<th align="right">v_1</th>
-<th align="right">v_2</th>
-<th align="right">v_3</th>
-<th align="right">v_4</th>
+<th align="right">v 1</th>
+<th align="right">v 2</th>
+<th align="right">v 3</th>
+<th align="right">v 4</th>
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">sitio_1</td>
+<td align="left">s 1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
 </tr>
 <tr>
-<td align="left">sitio_2</td>
+<td align="left">s 2</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
 <tr>
-<td align="left">sitio_3</td>
+<td align="left">s 3</td>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
 <tr>
-<td align="left">sitio_X</td>
+<td align="left">s X</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -293,29 +308,182 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
 </tr>
 </tbody></table>
 
+</div>
+<div style='float:right;width:48%;'>
+  <table><thead>
+<tr>
+<th><strong>Historias de detección</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pr(\(H_{1}\)=1001)= \(\psi\) × p1(1–p2)(1–p3)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{2}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{3}\)=1100)= \(\psi\) × p1p2(1–p3)(1–p4)</td>
+</tr>
+<tr>
+<td>Pr(\(H_{x}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+</tbody></table>
+
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-13" style="background:;">
   <hgroup>
-    <h1>Read-And-Delete</h1>
+    <h2>Estas Historias se combinan en un solo modelo de maxima verosimilitud</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <table><thead>
+<tr>
+<th><strong>Historias de detección</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pr(\(H_{1}\)=1001)= \(\psi\) × p1(1–p2)(1–p3)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{2}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{3}\)=1100)= \(\psi\) × p1p2(1–p3)(1–p4)</td>
+</tr>
+<tr>
+<td>Pr(\(H_{x}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+</tbody></table>
+
+<p><br />
+<br /></p>
+
+<p>\[
+\begin{aligned}
+L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
+\end{aligned}
+\]</p>
+
+<ul class = "build incremental">
+<li>El modelo admite incorporar covariables para explicar \(\psi\) y \(p\)</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-14" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>El mismo ejemplo del calculo de \(\psi\) y \(p\)</h2>
   </hgroup>
+  <article data-timings="">
+    <h3>Método Bayesiano.</h3>
+
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">v 1</th>
+<th align="right">v 2</th>
+<th align="right">v 3</th>
+<th align="right">v 4</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s 1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">s 2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s 3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s X</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Es importante entender que hay dos procesos que se pueden modelar de forma jerarquica.</p>
+
+<ul class = "build incremental">
+<li>El proceso ecologico (\(\psi\)) sigue una distribucion Bernoulli.</li>
+<li>El modelo de observacion (\(p\)) sigue una distribucion Bernoulli.</li>
+<li>La probabilidad de observar la especie dada que esta presente: \(p\)=Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)</li>
+<li>La probabilidad de ocurrencia: \(\psi\) =Pr(\(z_{i}\)=1)</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Un modelo jerarquico</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Occu_Bayes.png" alt="Full Occu Bayes"></p>
+
+<h3>Admite covariables</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Cual uso, Maxima verosimilitud o Bayesiano?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>ML</h3>
+
+<ul class = "build incremental">
+<li>Paquete unmarked en R</li>
+<li>Admite seleccion \(automatica\) de modelos con AIC</li>
+<li>Problemas con matrices que tienen muchos NAs</li>
+<li>Problema Hesian y estimados ok.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Bayesiano</h3>
+
+<ul class = "build incremental">
+<li>Lenguaje BUGS o Stan llamado desde R</li>
+<li>La seleccion de modelos no es tan sencilla, BIC no es adecuado</li>
+<li>No tiene problemas con muchos NAs en la matriz<br></li>
+<li>Los estimados son mas precisos.</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
   <article data-timings="">
     
   </article>
@@ -376,7 +544,7 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Mackenzie et al 2002, 2006 al rescate'>
+        data-slide=9 title='Mackenzie et al 2002, 2003, 2006 al rescate'>
          9
       </a>
     </li>
@@ -388,26 +556,44 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='La ocupación (\(\psi\))'>
+        data-slide=11 title='La ocupación (\(\psi\)) y la probabilidad de detección (\(p\))'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Calculo de (\(\psi\)) y p'>
+        data-slide=12 title='Ejemplo del calculo de \(\psi\) y \(p\)'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Read-And-Delete'>
+        data-slide=13 title='Estas Historias se combinan en un solo modelo de maxima verosimilitud'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Slide 2'>
+        data-slide=14 title='El mismo ejemplo del calculo de \(\psi\) y \(p\)'>
          14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Un modelo jerarquico'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Cual uso, Maxima verosimilitud o Bayesiano?'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='NA'>
+         17
       </a>
     </li>
   </ul>
@@ -419,8 +605,34 @@ La Ecología:  Estudio de las interacciones que determinan la <em>distribución 
   <![endif]-->
 </body>
   <!-- Load Javascripts for Widgets -->
-  <script src="test.js"></script>
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="test.js"></script>
 
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
   <!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
