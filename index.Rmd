@@ -1,6 +1,6 @@
 ---
 title       : Abundancia
-subtitle    : Entendiendo la historia
+subtitle    : Entendiendo el contexto y la historia
 author      : Diego J. Lizcano
 job         : ULEAM, Manta
 logo        : TSG.png
@@ -19,6 +19,15 @@ github      : {user: dlizcano, repo: IntroOccuPresent}
 knit        : slidify::knit2slides
 ---
 
+--- .segue #towork :url(https://player.vimeo.com/video/143020397) 
+
+## Gracias a:
+
+---.segue bg:black
+
+## Descargar Diapositivas de: https://goo.gl/e9muTP
+
+---
 
 # About me
 
@@ -321,7 +330,7 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 ![Coding now](https://www.r-project.org/Rlogo.png)
 
 
---- .segue #towork bg:url(https://pixabay.com/get/ec3cb20c29f71c22d2524518a33219c8b66ae3d11fb7184696f5c170/children-593313_1280.jpg)
+--- .segue #towork bg:url(assets/img/children-593313_1280.jpg)
 
 ## Al final: Modelo de ocupacion Bayesiano espacial.
 

@@ -1,0 +1,12 @@
+base
+xtable
+reshape
+lattice
+Rcpp
+unmarked
+sp
+raster
+nlme
+rpart
+spatstat
+knitr
