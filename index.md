@@ -332,11 +332,11 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 
 | 1er dia:    |                                             |
 |-------------|---------------------------------------------|
-|Jue Maniana  | 1. Introducción a R                         |
+|Jue Mañana   | 1. Introducción a R                         |
 |             | 2. R como herramienta de modelacion         |
 |Jue Tarde    | 3. El concepto de ocupación y su modelado   |
 |             | 4. Modelo de ocupación estático             |
-|Vie Maniana  | 5. Modelo de ocupacion estatico espacial    |
+|Vie Mañana   | 5. Modelo de ocupacion estatico espacial    |
 |             | 6. Introducción a los modelos bayesianos    |
 |Vie Tarde    | 7. Modelo occu. estático bayesiano          |
 |             | 8. Modelo occu. dinamico (ML y Bayes)       |
