@@ -13,19 +13,21 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax, bootstrap, quiz]# 
 mode        : selfcontained # {standalone, draft}
-assets      : {js: 'test.js'}
+assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"}
 
 github      : {user: dlizcano, repo: IntroOccuPresent}
 knit        : slidify::knit2slides
 ---
 
---- .segue #towork :url(https://player.vimeo.com/video/143020397) 
+ 
 
 ## Gracias a:
 
----.segue bg:black
+<iframe src="https://player.vimeo.com/video/143020397?autoplay=1&loop=1&color=AFAFAF&title=0&byline=0&portrait=0" width="700" height="550" frameborder="50" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-## Descargar Diapositivas de: https://goo.gl/e9muTP
+---.segue .centrepre .bigger bg:black
+
+## Descargar Diapositivas de:  https://goo.gl/e9muTP
 
 ---
 
@@ -43,7 +45,7 @@ knit        : slidify::knit2slides
 > - [IUCN/SSC Tapir Specialist Group](http://www.tapirs.org/committees/index.html)
 > - Mountain Tapir 
 > - http://dlizcano.github.io
-> - [@dlizcano en twitter](https://twitter.com/dlizcano)
+> - [<i class="fa fa-twitter" aria-hidden="true" fa-3x></i> @dlizcano en twitter](https://twitter.com/dlizcano) 
 
 
 
@@ -95,6 +97,13 @@ La Ecología:  Estudio de las interacciones que determinan la __distribución y 
 
 ## Abundancia relativa: Una variable indicadora del estado de la población
 
+
+---.vcenter bg:url(assets/img/bird_abundance.jpg)
+
+## No se cuantos hay pero si donde hay mas y donde hay menos.
+
+##### http://www.stateofthebirds.org/2016/resources/species-abundance-maps/wood-thrush/#_ga=1.58268970.1097663810.1456855475
+
 ---
 
 ## Los muestreos no son infalibles
@@ -102,7 +111,7 @@ La Ecología:  Estudio de las interacciones que determinan la __distribución y 
 ![Hiding cat](http://i.giphy.com/nejXhE8hnCiQ0.gif)
 
 
-#### La detectabilidad depende de:
+### La detectabilidad depende de:
 
 > - 1. Las condiciones del muestreo (clima, hora)
 > - 2. La habilidad del observador (sensor)
@@ -277,7 +286,7 @@ Es importante entender que hay dos procesos que se pueden modelar de forma jerar
 
 ![Andy Royle](http://www.pwrc.usgs.gov/staff/profiles/images/royle.jpg)
 
-Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupacion.
+Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupación
 
 *** =right
 
@@ -285,7 +294,7 @@ Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupacion
   
 ![libro azul](https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780123740977.jpg)
 
-Libro de nivel avanzado con muchos detalles, formulas, ejemplos y codigo en R y lenguage BUGS.
+Libro de nivel avanzado con muchos detalles, formulas, ejemplos y código en R y lenguaje BUGS.
 
 --- &twocol
 
@@ -306,13 +315,37 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 <a class="btn btn-large btn-danger" rel="popover" data-content="No. Hay modelos jerarquicos que no son Bayesianos." data-original-title="A Title" id='example'>Son todos los modelos jerarquicos Bayesianos ?</a>
 
 
---- #alfinal bg:url(https://pixabay.com/get/e131b70d2fe90021d85a5840981318c3fe76e6d31fb816429df8c6/baby-84627_1280.jpg)
+--- #alfinal bg:url(assets/img/baby-84626_1280.jpg)
 
 ## Manos a la obra!
 
-#### Primeros pasos en   
   
 ![Coding now](https://www.r-project.org/Rlogo.png)
+> - Nivel?
+
+
+--- &twocol
+
+## Cronograma
+
+*** =left 
+
+| 1er dia:    |                                             |
+|-------------|---------------------------------------------|
+|Jue Maniana  | 1. Introducción a R                         |
+|             | 2. R como herramienta de modelacion         |
+|Jue Tarde    | 3. El concepto de ocupación y su modelado   |
+|             | 4. Modelo de ocupación estático             |
+|Vie Maniana  | 5. Modelo de ocupacion estatico espacial    |
+|             | 6. Introducción a los modelos bayesianos    |
+|Vie Tarde    | 7. Modelo occu. estático bayesiano          |
+|             | 8. Modelo occu. dinamico (ML y Bayes)       |
+|             | 9. Otros modelos jerárquicos                |
+
+*** =right
+
+![Coding fast](http://i.giphy.com/fQZX2aoRC1Tqw.gif)
+
 
 
 --- .segue #towork bg:url(assets/img/children-593313_1280.jpg)
