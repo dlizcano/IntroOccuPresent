@@ -140,11 +140,17 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 
 ## La ocupación ($\psi$) y la probabilidad de detección ($p$)
 
-> - 1. Proporción del área muestreada que esta ocupada por la especie.
-> - 2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie.  
+### La ocupación ($\psi$) que es un reflejo de otros parámetros poblacionales importantes como la densidad. 
+
+> - 1. ($\psi$) es la proporción del área muestreada que esta ocupada por la especie.
+> - 2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie cuando esta se encuentra en ese lugar. 
+> - 3. Los __muestreos repetidos__ son clave.
   
-  
-Así debería verse una tabla de datos con muestreos repetidos.
+###  ($\psi$) esta influenciada por variables ambientales  (__Covariables__)como cobertura vegetal, altitud, precipitacion, etc.
+
+---
+
+## Así debería verse una tabla de datos con muestreos repetidos.
   
 
 
@@ -233,8 +239,8 @@ $$
  
 Es importante entender que hay dos procesos que se pueden modelar de forma jerarquica.
   
-> - El proceso ecologico ($\psi$) sigue una distribucion Bernoulli.
-> - El modelo de observacion ($p$) sigue una distribucion Bernoulli.
+> - El proceso ecológico ($\psi$) sigue una distribución Bernoulli.
+> - El modelo de observación ($p$) sigue una distribución Bernoulli.
 > - La probabilidad de observar la especie dada que esta presente: $p$=Pr($y_{i}$=1 $\mid$ $z_{i}$=1)
 > - La probabilidad de ocurrencia: $\psi$ =Pr($z_{i}$=1)
 
@@ -330,17 +336,17 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 
 *** =left 
 
-| 1er dia:    |                                             |
-|-------------|---------------------------------------------|
-|Jue Mañana   | 1. Introducción a R                         |
-|             | 2. R como herramienta de modelacion         |
-|Jue Tarde    | 3. El concepto de ocupación y su modelado   |
-|             | 4. Modelo de ocupación estático             |
-|Vie Mañana   | 5. Modelo de ocupacion estatico espacial    |
-|             | 6. Introducción a los modelos bayesianos    |
-|Vie Tarde    | 7. Modelo occu. estático bayesiano          |
-|             | 8. Modelo occu. dinamico (ML y Bayes)       |
-|             | 9. Otros modelos jerárquicos                |
+| Día-jornada |                                                |
+|-------------|------------------------------------------------|
+|Jue Mañana   | 1. Introducción a R                            |
+|             | 2. R como herramienta de modelado              |
+|Jue Tarde    | 3. El concepto de ocupación y su modelado      |
+|             | 4. Modelo de occu. estático - 101 unmarked     |
+|Vie Mañana   | 5. Modelo de occu. estatico - Sim Machalilla1  |
+|             | 6. Modelo de occu. estatico - Sim Machalilla2  |
+|Vie Tarde    | 7. Modelo de occu. estático pecari Machalilla  |
+|             | 8. Modelo de occu. dinamico (ML y Bayes)       |
+|             | 9. Otros modelos jerárquicos                   |
 
 *** =right
 

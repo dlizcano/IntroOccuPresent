@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>El concepto de ocupaciÃ³n y su modelado</title>
+  <meta charset="utf-8">
+  <meta name="description" content="El concepto de ocupaciÃ³n y su modelado">
+  <meta name="author" content="Diego J. Lizcano">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/tsg_logo.gif">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/TSG.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>El concepto de ocupaciÃ³n y su modelado</h1>
+    <h2>Modelo estatico de ocupaciÃ³n</h2>
+    <p>Diego J. Lizcano<br/>ULEAM, Manta</p>
+  </hgroup>
+    <a href="https://github.com/dlizcano/IntroOccuPresent/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h1>Simulaciones y modelos</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros que afectan los estimados de otros parámetros.</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code>All models are wrong but some are useful.
+George Box, 1978
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/402520/images/2417431/Pox.png"  align="right" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h1>Por que son útiles las simulaciones:</h1>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li>Conozco los parámetros verdaderos.</li>
+<li>Son una buena forma de aprender.</li>
+<li>Podemos calibrar un modelo. </li>
+<li>Al ser capaces de simular datos bajo cierto modelo, se garantiza que uno entiende el modelo, sus restricciones y limitaciones.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/statmodel-1.png" alt="plot of chunk statmodel"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-4" style="background:black;">
+  <hgroup>
+    <h2>Imitar la forma como se originan las medidas de interes. La ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Aproximación mecanistica (mecanismo).</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>Hay dos procesos</h1>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h2>Proc. ecológico <em>z</em>.</h2>
+
+<p>El cual gobierna la presencia de la especie.<br>
+La especie está (<em>z</em>=1), o no está (<em>z</em>=0) en el lugar. Simulado a partir de una distribución Bernoulli. </p>
+
+<p><img src="assets/fig/occumodel-1.png" alt="plot of chunk occumodel"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h2>Proc. de observación <em>y</em>.</h2>
+
+<p>El cual gobierna la observación de la especie.
+La especie se observa (<em>p</em>=1), si es que la especie esta. Prob. condicional. Simulado con una distribución Bernoulli por el proceso ecologico. </p>
+
+<p><img src="assets/fig/obsmodel-1.png" alt="plot of chunk obsmodel"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Es importante entender que ambos procesos que se enlazan forma jerarquica.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/hmodel.png"  align="right" /></p>
+
+<h3>El proceso ecológico (\(\psi\)) sigue una distribución Bernoulli.</h3>
+
+<h3>El modelo de observación (\(p\)) sigue una distribución Bernoulli.</h3>
+
+<p>La probabilidad de ocurrencia, es una proporcion tambien (ocupación) </p>
+
+<p>\(\psi\) = Pr(\(z_{i}\)=1)  </p>
+
+<p>La probabilidad de observar la especie dado que la especie esta presente es.  </p>
+
+<p>\(p\) = Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Ahora jugemos un poco con la distribución Bernoulli</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Es una variación de la distribución binomial</h3>
+
+<h4>Variemos ni y pi y observemos como la media estimada (azul) se acerca a pi</h4>
+
+<pre><code class="r">ni&lt;-10 # numero de datos
+pi&lt;- 0.5 # probabilidad (~proporcion de unos)
+# Generemos datos con esa informacion 
+daber&lt;-data.frame(estimado=rbinom(ni, 1, pi)) 
+# Grafiquemos 
+library(ggplot2)
+ggplot(daber, aes(x=estimado)) + 
+    geom_histogram(aes(y=..density..), # Histograma y densidad 
+                   binwidth=.1, # Ancho del bin
+                   colour=&quot;black&quot;, fill=&quot;white&quot;) + 
+        geom_vline(aes(xintercept=mean(estimado, na.rm=T)), 
+          color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1) # media en azul
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-8" style="background:#202020;">
+  <hgroup>
+    <h2>Cambiemos la aproximación. Estudiemos la relación a partir de los datos y las covariables</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Relación parametros y covariables</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Ocupación y covariables</h3>
+
+<p>La ocupación (\(\psi\)) es un conjunto de 1s y 0s.  </p>
+
+<p>Las covariables pueden ser continuas o discretas.  </p>
+
+<table><thead>
+<tr>
+<th align="left">sitio</th>
+<th align="left">psi</th>
+<th align="left">cov1</th>
+<th align="left">cov2</th>
+<th align="left">cov3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">1.5</td>
+<td align="left">bosque</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">15</td>
+<td align="left">1.1</td>
+<td align="left">cafe</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">20</td>
+<td align="left">5.5</td>
+<td align="left">bosque</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left">30</td>
+<td align="left">2.1</td>
+<td align="left">cacao</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">40</td>
+<td align="left">2.2</td>
+<td align="left">bosque</td>
+</tr>
+</tbody></table>
+
+<h4>Regresión logistica</h4>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Observación y covariables</h3>
+
+<p>La Observaciones son un conjunto de 1s y 0s.  </p>
+
+<p>Las covariables pueden ser continuas o discretas. </p>
+
+<table><thead>
+<tr>
+<th align="left">obs</th>
+<th align="left">cov1</th>
+<th align="left">cov2</th>
+<th align="left">cov3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">1.5</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">15</td>
+<td align="left">1.1</td>
+<td align="left">soleado</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">20</td>
+<td align="left">5.5</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">30</td>
+<td align="left">2.1</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">40</td>
+<td align="left">2.2</td>
+<td align="left">soleado</td>
+</tr>
+</tbody></table>
+
+<h4>Regresión logistica</h4>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Regresión logistica</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data(mtcars)
+obs&lt;-mtcars$vs
+cov1&lt;-mtcars$mpg
+table3&lt;-cbind.data.frame (obs,cov1)
+library(ggplot2)
+ggplot(table3, aes(x=cov1, y=obs)) + geom_point() + 
+  geom_smooth(method = &quot;glm&quot;, method.args = list(family = &quot;binomial&quot;))
+</code></pre>
+
+<p><img src="assets/fig/logist-1.png" alt="plot of chunk logist"></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h1>Regresión logistica permite encontrar la relación entre una variable binaria y covariables</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Poniendo todo junto</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Occu_Bayes.png" alt="Coding now"></p>
+
+<ul class = "build incremental">
+<li>Pasar a SimulMachalilla</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Cronograma</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th>Día-jornada</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Jue Mañana</td>
+<td>1. Introducción a R</td>
+</tr>
+<tr>
+<td></td>
+<td>2. R como herramienta de modelado</td>
+</tr>
+<tr>
+<td>Jue Tarde</td>
+<td>3. El concepto de ocupación y su modelado</td>
+</tr>
+<tr>
+<td></td>
+<td>4. Modelo de occu. estático - 101 unmarked</td>
+</tr>
+<tr>
+<td>Vie Mañana</td>
+<td>5. Modelo de occu. estatico - Sim Machalilla1</td>
+</tr>
+<tr>
+<td></td>
+<td>6. Modelo de occu. estatico - Sim Machalilla2</td>
+</tr>
+<tr>
+<td>Vie Tarde</td>
+<td>7. Modelo de occu. estático pecari Machalilla</td>
+</tr>
+<tr>
+<td></td>
+<td>8. Modelo de occu. dinamico (ML y Bayes)</td>
+</tr>
+<tr>
+<td></td>
+<td>9. Otros modelos jerárquicos</td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://i.giphy.com/fQZX2aoRC1Tqw.gif" alt="Coding fast"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="towork" style="background:url(assets/img/children-593313_1280.jpg);">
+  <hgroup>
+    <h2>Al final: Modelo de ocupacion Bayesiano espacial.</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Simulaciones y modelos'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros que afectan los estimados de otros parámetros.'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Por que son útiles las simulaciones:'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Imitar la forma como se originan las medidas de interes. La ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Hay dos procesos'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Es importante entender que ambos procesos que se enlazan forma jerarquica.'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Ahora jugemos un poco con la distribución Bernoulli'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Cambiemos la aproximación. Estudiemos la relación a partir de los datos y las covariables'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Relación parametros y covariables'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Regresión logistica'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Regresión logistica permite encontrar la relación entre una variable binaria y covariables'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Poniendo todo junto'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Cronograma'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Al final: Modelo de ocupacion Bayesiano espacial.'>
+         14
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="test.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
