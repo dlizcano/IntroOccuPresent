@@ -1,7 +1,0 @@
-name: Publish Document
-account: rpubs
-server: rpubs.com
-appId: https://api.rpubs.com/api/v1/document/191521/83e9cfa0c4df4d3fbd427c763154276e
-bundleId: https://api.rpubs.com/api/v1/document/191521/83e9cfa0c4df4d3fbd427c763154276e
-url: http://rpubs.com/dlizcano/191521
-when: 1466688491.45483
