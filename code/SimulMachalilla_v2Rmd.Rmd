@@ -1,38 +1,45 @@
 
 ---
-title       : Simulación de datos de ocupación, bajo el modelo estático (MacKenzie et al. 2002) para el venado de cola blanca en el Parque Nacional Machalilla
-subtitle    : Entendiendo las simulaciones y el modelo básico. Gran parte del código y el texto han sido adaptados de los libros de [Marc Kery (2010, 2011, y 2015).](https://www.amazon.com/Introduction-WinBUGS-Ecologists-Bayesian-regression/dp/0123786053/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=WKY41VDAMZ9Q6TRAMY8M)
-
-
-author      : Diego J. Lizcano
-
+title: Simulación de datos de ocupación, bajo el modelo estático (MacKenzie et al.
+  2002) para el venado de cola blanca en el Parque Nacional Machalilla
+author: "Diego J. Lizcano"
 date: "July, 2016"
 output:
-  html_document:
-    toc: yes
-    toc_depth: '3'
-    highlight   : pygments  # {highlight.js, prettify, highlight}
-    widgets     : [mathjax, bootstrap, quiz]# 
-    mode        : selfcontained # {standalone, draft}
-    assets      : {js: 'test.js'}
   pdf_document:
     highlight: tango
     number_sections: yes
     toc: yes
     toc_depth: 3
+  html_document:
+    assets:
+      js: test.js
+    highlight: pygments
+    mode: selfcontained
+    toc: yes
+    toc_depth: '3'
+    widgets:
+    - mathjax
+    - bootstrap
+    - quiz
   word_document:
     highlight: kate
-
-twitter     : dlizcano
-license     : by-nc-sa 
-box         : grey
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap, quiz]# 
-mode        : selfcontained # {standalone, draft}
-assets      : {js: 'test.js'}
-
-github      : {user: dlizcano, repo: IntroOccuPresent}
+github:
+  repo: IntroOccuPresent
+  user: dlizcano
+highlighter: highlight.js
+hitheme: tomorrow
+license: by-nc-sa
+mode: selfcontained
+box: grey
+subtitle: Entendiendo las simulaciones y el modelo básico. Gran parte del código y
+  el texto han sido adaptados de los libros de [Marc Kery (2010, 2011, y 2015).](https://www.amazon.com/Introduction-WinBUGS-Ecologists-Bayesian-regression/dp/0123786053/ref=pd_bxgy_14_img_2?ie=UTF8&psc=1&refRID=WKY41VDAMZ9Q6TRAMY8M)
+assets:
+  js: test.js
+twitter: dlizcano
+widgets:
+- mathjax
+- bootstrap
+- quiz
 ---
 
 
@@ -104,7 +111,7 @@ Primero escogemos el  tamaño de la muestra, el número de sitios y el número d
 
 ```{r first,cache=TRUE}
 M <- 60  # Número de réplicas espaciales (sitios)
-J <- 15  # Número de réplicas temporales (conteos repetidos)
+J <- 30  # Número de réplicas temporales (conteos repetidos)
 ```
 
 
@@ -280,7 +287,7 @@ for (i in 1:J){                          # Generate counts
 
 ```
 
-Hasta acá hemos simulado la presencia/ausencia del venado de cola blanca en 60 sitios durante 15 sesiones de muestreo. Veamos que contienen las tablas. Recuerde que los sitios están en las filas y los muestreos repetidos en las columnas. Para comparar, mostraremos la verdadera ocurrencia en la primera columna para 30 sitios y solo cinco muestreos.
+Hasta acá hemos simulado la presencia/ausencia del venado de cola blanca en 60 sitios durante 30 sesiones de muestreo. Veamos que contienen las tablas. Recuerde que los sitios están en las filas y los muestreos repetidos en las columnas. Para comparar, mostraremos la verdadera ocurrencia en la primera columna para 30 sitios y solo cinco muestreos.
 
 ```{r table1,echo =TRUE, results = 'asis',warning=FALSE}
 library(knitr)
@@ -309,7 +316,7 @@ hist(y, breaks = 50, col = "grey", ylim = c(0, 600), main = "",
 
 ```
 
-Figura 6. Relación entre la (jittered) ocupación observada de venados (y) y las tres co variables estandarizadas. Altitud (A). Cobertura de bosque (B). Temperatura (C) y la frecuencia de distribución de la ocurrencia observada (y) en un set de datos de 60 sitios con 15 muestreos cada uno (D).
+Figura 6. Relación entre la (jittered) ocupación observada de venados (y) y las tres co variables estandarizadas. Altitud (A). Cobertura de bosque (B). Temperatura (C) y la frecuencia de distribución de la ocurrencia observada (y) en un set de datos de 60 sitios con 30 muestreos cada uno (D).
 
 Hasta aquí hemos creado un set de datos donde la deteccion/no deteccion del venado esta negativamente correlacionado con la temperatura y positivamente relacionado con la cobertura de bosque. Hay una razón por la cual esta correlacione entre variables es diferente. La ocurrencia por sitio, el objetivo de la inferencia ecológica, está afectado por la cobertura de bosque y la altitud, pero no por la temperatura, mientras que la probabilidad de detección, el parámetro caracterizando la medida del proceso de error cuando tomamos medidas de ocurrencia, es también afectado por la altitud y adicionalmente por la temperatura. Por lo tanto, como se puede notar, hay un gran reto en desenredar la razón de la variación espacio-temporal en la observación de los datos de detección/no detección, dado que pueden ser afectados por dos procesos totalmente diferentes: el ecológico y el observacional. 
 
@@ -320,7 +327,7 @@ Podría ser de mucha utilidad empacar todo lo que hemos hecho en una sola funci�
 
 ```{r function,cache=TRUE, warning=FALSE}
 # Function definition with set of default values
-data.fn <- function(M = 267, J = 3, mean.occupancy = 0.6, 
+data.fn <- function(M = 60, J = 30, mean.occupancy = 0.6, 
                     beta1 = -2, beta2 = 2, beta3 = 1, mean.detection = 0.3, 
                     alpha1 = -1, alpha2 = -3, alpha3 = 0, show.plot = TRUE){
 # Function to simulate occupancy measurements replicated at M sites during J occasions.
@@ -464,17 +471,39 @@ Felicitaciones!, si llego hasta acá y si entendió la simulación de datos y su
 
 # Analisis de ocupación
 
-Ya que hemos entendido como funcionan e interactúan los dos procesos; el ecológico y el observacional para producir los datos de ocupación y luego de generar varios sets de datos, ahora solo nos resta analizarlos. La forma más directa e intuitiva es usar la función occu del paquete unmarked (cita). Posteriormente podremos usar un modelo de tipo bayesiano en el lenguaje BUGS para analizar los datos.  
+Ya que hemos entendido como funcionan e interactúan los dos procesos; el ecológico y el observacional para producir los datos de ocupación. Luego de generar varios sets de datos, ahora solo nos resta analizarlos. La forma más directa e intuitiva es usar la función occu del paquete unmarked (Fiske and Chandler, 2011). Posteriormente podremos usar un modelo de tipo bayesiano en el lenguaje BUGS para analizar los datos.  
 
 ## Generando los datos
 
-Esta vez recurriremos a un diseño tipo TEAM (http://www.teamnetwork.org) con 60 sitios de muestreo y treinta días de muestreos repetidos. De nuevo nuestra especie es el venado de cola blanca. Para este ejemplo asumiremos que la detección es 0.5 y las mismas interacciones con las co variables altitud, cobertura de bosque y temperatura. 
+Esta vez recurriremos a un diseño tipo TEAM (http://www.teamnetwork.org) con 60 sitios de muestreo y treinta días de muestreos repetidos. De nuevo nuestra especie es el venado de cola blanca. Para este ejemplo asumiremos que la detección es 0.5, la ocupacion 0.6 y las interacciones son mucho mas sencillas con la altitud como la unica covariable que explica la ocupación y la detección, pero en diferentes direcciones. Observe el signo positivo y negativo en los coeficientes.
 
 ```{r unmarked_data,cache=TRUE}
 # data generation
-datos2<-data.fn(M = 60, J = 30, beta1 = -2, beta2 = 2, beta3 = 1, 
+# generemos un modelo sencillo donde la ocupacion esta explicada por la elevacion
+datos2<-data.fn(M = 60, J = 30, beta1 = -2, beta2 = 0, beta3 = 0, 
                 mean.occupancy = 0.6, mean.detection = 0.5, 
-                    alpha1 = -1, alpha2 = -3, alpha3 = 0, show.plot = FALSE)
+                    alpha1 = 2.5, alpha2 = -0.5, alpha3 = 0, show.plot = FALSE)
+
+# Function to simulate occupancy measurements replicated at M sites during J occasions.
+# Population closure is assumed for each site.
+# Expected occurrence may be affected by elevation (elev), 
+# forest cover (forest) and their interaction.
+# Expected detection probability may be affected by elevation, 
+# temperature (temp) and their interaction.
+# Function arguments:
+#     M: Number of spatial replicates (sites)
+#     J: Number of temporal replicates (occasions)
+#     mean.occupancy: Mean occurrence at value 0 of occurrence covariates
+#     beta1: Main effect of elevation on occurrence
+#     beta2: Main effect of forest cover on occurrence
+#     beta3: Interaction effect on occurrence of elevation and forest cover
+#     mean.detection: Mean detection prob. at value 0 of detection covariates
+#     alpha1: Main effect of elevation on detection probability
+#     alpha2: Main effect of temperature on detection probability
+#     alpha3: Interaction effect on detection of elevation and temperature
+#     show.plot: if TRUE, plots of the data will be displayed; 
+#               set to FALSE if you are running simulations.
+
 
 #To make the objects inside the list directly accessible to R, without having to address 
 #them as data$C for instance, you can attach datos2 to the search path.
@@ -510,10 +539,11 @@ El siguiente paso es ajustar los modelos que se requerían variando las co varia
 
 ```{r occu,cache=TRUE}
 fm0 <- occu(~1 ~1, umf) #detection first, occupancy next
-fm1 <- occu(~ temp + elev ~ 1, umf)
-fm2 <- occu(~ temp + elev ~ elev, umf)
-fm3 <- occu(~ temp + elev ~ elev + forest, umf)
-# fm4 <- occu(~ temp + elev ~ elev + forest + elev*forest, umf)
+fm1 <- occu(~ elev ~ 1, umf)
+fm2 <- occu(~ elev ~ elev, umf)
+fm3 <- occu(~ temp ~ elev, umf)
+fm4 <- occu(~ temp ~ forest, umf)
+fm5 <- occu(~ temp + elev ~ elev, umf)
 ```
 
 
@@ -523,12 +553,13 @@ Unmarked permite hacer selección de modelos basándose en el AIC de cada uno. D
 
 ```{r modelsele,cache=TRUE}
 library(xtable)
-models <- fitList(
-  'psi(.)p(.)'                        = fm0,
-  'psi(.)p(temp + elev)'              = fm1,
-  'psi(elev)p(temp + elev)'           = fm2,
-  'psi(elev + forest)p(temp + elev)'  = fm3)
-#  'psi(elev + forest + elev*forest)p(temp + elev)'  = fm4)
+models <- fitList( #here e put names to the models
+  'p(.)psi(.)'                        = fm0,
+  'p(elev)psi(.)'                     = fm1,
+  'p(elev)psi(elev)'                  = fm2,
+  'p(temp)psi(elev)'                  = fm3,
+  'p(temp)psi(forest)'                = fm4,
+  'p(temp+elev)psi(elev)'             = fm5)
 
 modSel(models)
 ```
@@ -536,24 +567,23 @@ modSel(models)
 
 ## Predicción y graficas 
 
-El modelo con menor AIC puede ser usados para predecir resultados esperados de acuerdo a un nuevo set de datos. Por ejemplo, uno podría preguntar la abundancia de venados que se espera encontrar en un sitio con 50% de cobertura forestal. La predicciones también otra forma de presentar los resultados de un análisis.  Aquí ilustraremos como se ve la predicción de _p_ sobre el rango de las co variables estudiadas. Note que estamos usando co variables estandarizadas. Si estuviéramos usando co variables en su escala real, tendríamos que tener en cuenta que hay que transformarlas usando la media y la desviación estándar. 
+El modelo con menor AIC puede ser usados para predecir resultados esperados de acuerdo a un nuevo set de datos. Por ejemplo, uno podría preguntar la abundancia de venados que se espera encontrar en un sitio con mayor altitud. La predicciones también son otra forma de presentar los resultados de un análisis.  Aquí ilustraremos como se ve la predicción de _p_ sobre el rango de las co variables estudiadas. Note que estamos usando co variables estandarizadas. Si estuviéramos usando co variables en su escala real, tendríamos que tener en cuenta que hay que transformarlas usando la media y la desviación estándar. 
 
 Antes de usar el modelo para predecir es buena idea verificar que el modelo ajusta bien con la función parboot.
-
 
 ```{r fit,cache=TRUE, warning=FALSE}
 library(raster)
 
-parboot(fm3) # goodness of fit
-plot(parboot(fm3)) # goodness of fit
+parboot(fm5) # goodness of fit
+plot(parboot(fm5)) # goodness of fit
 
-#makes a new dataset:
+```
 
-elev <- runif(n = 100, -1, 1)                         # Scaled elevation
-forest <- runif(n = 100, -1, 1)                       # Scaled forest cover
-temp <- array(runif(n = M*J, -1, 1), dim = c(M, J)) # Scaled temperature
-mapdata.g<-as.data.frame(cbind(elev,forest))
 
+Ahora vamos a construir mapas para cada una de nuestras covariables. Los mapas surgen de un patron aleatoreo de puntos con distribucion Poisson. Luego estos puntos los convertimos en una superficie interpolada.
+
+```{r spatial1,cache=TRUE, warning=FALSE}
+# lets make random maps for the three covariates
 library(spatstat)
 set.seed(2002) 
 
@@ -562,18 +592,31 @@ xrange=c(-2.5, 1002.5)
 yrange=c(-2.5, 502.5)
 window<-owin(xrange, yrange)
 
-# DISPERSE SEEDS FOR SPECIES 1:
-#elev <- density(rpoispp(lambda=0.001, win=window)) # should generate ~505 seeds
-#forest <- density(rpoispp(lambda=0.02, win=window)) # should generate ~505 seeds
-# mapdata.m<-stack(elev,forest)
+# Build maps from random points and interpole in same line
+elev <- density(rpoispp(lambda=0.01, win=window)) # 
+forest <- density(rpoispp(lambda=0.02, win=window)) # 
+temp <- density(rpoispp(lambda=0.5, win=window)) # 
 
-#elev<-raster(matrix(ncol = 50, nrow = 100, runif(100))) 
-#forest<-as.raster(matrix(hcl(0, 80, seq(50, 80, 10)),
-                 #nrow = 4, ncol = 5))
+# Put the covs in the same file and convert to raster
+mapdata.m<-stack(raster(elev),raster(forest), raster(temp)) 
+names(mapdata.m)<- c("elev", "forest", "temp") # put names to raster
 
-predictions <- predict(fm3, type="state", newdata=mapdata.g)
-# levelplot(Predicted ~ x.coord+y.coord, data=predictions)
-plot(predictions$Predicted)
+# lets plot the covs maps
+plot(mapdata.m)
+
+```
+
+Una vez tenemos nuestros mapas de covariables, los usamos para predecir con el mejor modelo y asi tener un mapa (predicho) de la ocupacion y la probabilidad de deteccion.
+
+```{r spatial2,cache=TRUE, warning=FALSE}
+##### make the predictions
+predictions_psi <- predict(fm5, type="state", newdata=mapdata.m)
+predictions_p <- predict(fm5, type="det", newdata=mapdata.m)
+## put in the same stack
+predmaps<-stack(predictions_psi$Predicted,predictions_p$Predicted) 
+names(predmaps)<-c("psi predicted", "p predicted") # put names
+plot(predmaps)
+
 ```
 
 
@@ -581,44 +624,44 @@ plot(predictions$Predicted)
 
 ```{r, eval=FALSE}
 
-### Generate one data set
-# ****************************
-set.seed(148)
-data <- data.fn(show.plot = T)    # Default arguments
-str(data)                         # Look at the object
-
-
-### Create values for two factors
-# *******************************
-### They are not correlated to response
-# Create factors: time and habitat
-time <- matrix(rep(as.character(1:data$J), data$M), ncol = data$J, byrow = TRUE)
-hab <- c(rep("A", 90), rep("B", 90), rep("C", 87)) # for a total of M=267 sites
-
-
-
-#### Skip model selection, which comes up with this AIC-best model
-# ****************************************************************
-library(unmarked)
-umf <- unmarkedFrameOccu(y = data$y, 
-          siteCovs = data.frame(elev = data$elev, forest = data$forest, hab = hab), 
-          obsCovs = list(wind = data$wind, time = time))
-summary(umf)
-summary(fm22 <- occu(~elev+wind ~elev*forest*hab, data=umf))
-
+# ### Generate one data set
+# # ****************************
+# set.seed(148)
+# data <- data.fn(show.plot = T)    # Default arguments
+# str(data)                         # Look at the object
+# 
+# 
+# ### Create values for two factors
+# # *******************************
+# ### They are not correlated to response
+# # Create factors: time and habitat
+# time <- matrix(rep(as.character(1:data$J), data$M), ncol = data$J, byrow = TRUE)
+# hab <- c(rep("A", 90), rep("B", 90), rep("C", 87)) # for a total of M=267 sites
+# 
+# 
+# 
+# #### Skip model selection, which comes up with this AIC-best model
+# # ****************************************************************
+# library(unmarked)
+# umf <- unmarkedFrameOccu(y = data$y, 
+#           siteCovs = data.frame(elev = data$elev, forest = data$forest, hab = hab), 
+#           obsCovs = list(wind = data$wind, time = time))
+# summary(umf)
+# summary(fm22 <- occu(~elev+wind ~elev*forest*hab, data=umf))
+# 
 
 
 
 ### Fit same model with JAGS, using library jagsUI
 # ************************************************
 # Bundle data
-HAB <- as.numeric(as.factor(hab))  # Get numeric habitat factor
-win.data <- list(y = data$y, 
-                 M = nrow(data$y), 
-                 J = ncol(data$y), 
-                 elev = data$elev, 
-                 forest = data$forest, 
-                 wind = data$wind, HAB = HAB)
+# HAB <- as.numeric(as.factor(hab))  # Get numeric habitat factor
+win.data <- list(y = datos2$y, 
+                 M = nrow(datos2$y), 
+                 J = ncol(datos2$y), 
+                 elev = datos2$elev, 
+                 forest = datos2$forest, 
+                 temp = datos2$temp)
 str(win.data)
 
 
@@ -632,13 +675,13 @@ mean.p ~ dunif(0, 1)        # Detection intercept on prob. scale
 alpha0 <- logit(mean.p)     # same on logit scale
 mean.psi ~ dunif(0, 1)      # Occupancy intercept on prob. scale
 beta0 <- logit(mean.psi)    # same on logit scale
-for(k in 1:2){              # 3 detection covariates
+for(k in 1:2){              # 2 detection covariates
    alpha[k] ~ dnorm(0, 0.01) # Covariates on logit(detection)
 #   alpha[k] ~ dnorm(0, 0.05) # Covariates on logit(detection)
 #   alpha[k] ~ dunif(-10, 10) # Covariates on logit(detection)
 }
 
-for(k in 1:11){             # 11 occupancy covariate terms in design mat
+for(k in 1:1){             # 1 occupancy covariate terms in design mat
    beta[k] ~ dnorm(0, 0.01)  # Covariates on logit(occupancy)
 #   beta[k] ~ dnorm(0, 0.05)  # Covariates on logit(occupancy)
 #   beta[k] ~ dunif(-10, 10)  # Covariates on logit(occupancy)
@@ -648,32 +691,25 @@ for(k in 1:11){             # 11 occupancy covariate terms in design mat
 # (Intercept)         (beta0 in BUGS)
 # elev                (beta[1])
 # forest              (beta[2])
-# habB                (beta[3])
-# habC                (beta[4])
-# elev:forest         (beta[5])
-# elev:habB           (beta[6])
-# elev:habC           (beta[7])
-# forest:habB         (beta[8])
-# forest:habC         (beta[9])
-# elev:forest:habB    (beta[10])
-# elev:forest:habC    (beta[11])
+# temp                (beta[3])
+# elev:forest         (beta[4])
+# elev:temp           (beta[5])
+# forest:temp         (beta[6])
+# elev:forest:temp    (beta[7])
+
 
 # Likelihood
 for (i in 1:M) {
   # True state model for the partially observed true state
   z[i] ~ dbern(psi[i])                     # True occupancy z at site i
   logit(psi[i]) <- beta0 +                 # occupancy (psi) intercept
-    beta[1] * elev[i] +                    # elev
-    beta[2] * forest[i] +                  # forest
-    beta[3] * equals(HAB[i],2) +           # effect of habitat 2 (= B)
-    beta[4] * equals(HAB[i],3) +           # effect of habitat 3 (= C)
-    beta[5] * elev[i] * forest[i] +        # elev:forest
-    beta[6] * elev[i] * equals(HAB[i],2) +       # elev:habB
-    beta[7] * elev[i] * equals(HAB[i],3) +       # elev:habC
-    beta[8] * forest[i] * equals(HAB[i],2) +     # forest:habB
-    beta[9] * forest[i] * equals(HAB[i],3) +     # forest:habC
-    beta[10] * elev[i] * forest[i] * equals(HAB[i],2) + # elev:forest:habB
-    beta[11] * elev[i] * forest[i] * equals(HAB[i],3)   # elev:forest:habC
+    beta[1] * elev[i] #+                   # elev
+    #beta[2] * forest[i] +                  # forest
+    #beta[3] * temp[i] +                    # temp
+    #beta[4] * elev[i] * forest[i] +        # elev:forest
+    #beta[5] * elev[i] * temp[i] +          # elev:temp
+    #beta[6] * forest[i] * temp[i] +        # forest:temp
+    #beta[7] * elev[i] * forest[i] * temp[i]   # elev:forest:temp
 
    for (j in 1:J) {
       # Observation model for the actual observations
@@ -681,7 +717,7 @@ for (i in 1:M) {
       p.eff[i,j] <- z[i] * p[i,j]
       logit(p[i,j]) <- alpha0 +     # detection (p) intercept
          alpha[1] * elev[i] +       # effect of elevation on p
-         alpha[2] * wind[i,j]       # effect of wind on p
+         alpha[2] * temp[i,j]       # effect of temp on p
    }
 }
 
@@ -694,14 +730,15 @@ logit.p <- alpha0     # ditto
 ",fill = TRUE)
 sink()
 
+library(jagsUI)
 
 # Initial values
-zst <- apply(data$y, 1, max)
+zst <- apply(datos2$y, 1, max)
 inits <- function(){list(z = zst, 
                          mean.psi = runif(1), 
                          mean.p = runif(1), 
                          alpha = rnorm(2), 
-                         beta = rnorm(11))}
+                         beta = rnorm(1))}
 
 
 # Parameters monitored
@@ -709,7 +746,7 @@ params <- c("sumZ", "occ.fs", "logit.psi", "logit.p", "alpha", "beta")
 
 # MCMC settings
 ni <- 50000   ;   nt <- 10   ;   nb <- 10000   ;   nc <- 3
-#ni <- 600   ;   nt <- 1   ;   nb <- 100   ;   nc <- 3
+# ni <- 600   ;   nt <- 1   ;   nb <- 100   ;   nc <- 3
 
 # Call JAGS from R (ART 260 sec with norm(), 480 with unif(-10,10)) and summarize posteriors
 system.time(out22 <- jags(win.data, inits, params, "model22.txt", 
@@ -722,7 +759,7 @@ traceplot(out22)
 print(out22, 3)
 
 #### Compare estimates from ML method (first two columns) and posterior sampling (column 3-4).
-tmp <- summary(fm22)
+tmp <- summary(fm5)
 cbind(rbind(tmp$state[1:2], tmp$det[1:2]), 
       Post.mean = out22$summary[c(3, 7:17, 4:6), 1], 
       Post.sd = out22$summary[c(3, 7:17, 4:6), 2])

@@ -55,7 +55,7 @@ George Box, 1978
 
 *** =right
 
-![plot of chunk statmodel](assets/fig/statmodel-1.png)
+![plot of chunk statmodel](figure/statmodel-1.png)
 
 
 
@@ -79,7 +79,7 @@ George Box, 1978
 El cual gobierna la presencia de la especie.  
 La especie está (_z_=1), o no está (_z_=0) en el lugar. Simulado a partir de una distribución Bernoulli. 
 
-![plot of chunk occumodel](assets/fig/occumodel-1.png)
+![plot of chunk occumodel](figure/occumodel-1.png)
 
 
 
@@ -92,7 +92,7 @@ El cual gobierna la observación de la especie.
 La especie se observa (_p_=1), si es que la especie esta. Prob. condicional. Simulado con una distribución Bernoulli por el proceso ecologico. 
 
 
-![plot of chunk obsmodel](assets/fig/obsmodel-1.png)
+![plot of chunk obsmodel](figure/obsmodel-1.png)
 
 ---
 
@@ -104,11 +104,11 @@ La especie se observa (_p_=1), si es que la especie esta. Prob. condicional. Sim
 ### El proceso ecológico ($\psi$) sigue una distribución Bernoulli.
 ### El modelo de observación ($p$) sigue una distribución Bernoulli.  
 
-La probabilidad de ocurrencia, es una proporcion tambien (ocupación) 
+La probabilidad de ocurrencia, es tambien una proporcion (ocupación):   
 
 $\psi$ = Pr($z_{i}$=1)  
 
-La probabilidad de observar la especie dado que la especie esta presente es.  
+La probabilidad de observar la especie dado que la especie esta presente es:    
 
 $p$ = Pr($y_{i}$=1 $\mid$ $z_{i}$=1)  
 
@@ -204,7 +204,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
   geom_smooth(method = "glm", method.args = list(family = "binomial"))
 ```
 
-![plot of chunk logist](assets/fig/logist-1.png)
+![plot of chunk logist](figure/logist-1.png)
 
 ---
 
@@ -237,8 +237,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 |Vie Mañana   | 5. Modelo de occu. estatico - Sim Machalilla1  |
 |             | 6. Modelo de occu. estatico - Sim Machalilla2  |
 |Vie Tarde    | 7. Modelo de occu. estático pecari Machalilla  |
-|             | 8. Modelo de occu. dinamico (ML y Bayes)       |
-|             | 9. Otros modelos jerárquicos                   |
+|             | 8. Otros modelos jerárquicos                   |
 
 *** =right
 

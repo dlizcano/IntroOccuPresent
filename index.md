@@ -345,8 +345,8 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 |Vie Mañana   | 5. Modelo de occu. estatico - Sim Machalilla1  |
 |             | 6. Modelo de occu. estatico - Sim Machalilla2  |
 |Vie Tarde    | 7. Modelo de occu. estático pecari Machalilla  |
-|             | 8. Modelo de occu. dinamico (ML y Bayes)       |
-|             | 9. Otros modelos jerárquicos                   |
+|             | 8. Otros modelos jerárquicos                   |
+
 
 *** =right
 

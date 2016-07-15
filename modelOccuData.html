@@ -108,7 +108,7 @@ George Box, 1978
 
 </div>
 <div style='float:right;width:48%;'>
-  <p><img src="assets/fig/statmodel-1.png" alt="plot of chunk statmodel"></p>
+  <p><img src="figure/statmodel-1.png" alt="plot of chunk statmodel"></p>
 
 </div>
   </article>
@@ -138,7 +138,7 @@ George Box, 1978
 <p>El cual gobierna la presencia de la especie.<br>
 La especie está (<em>z</em>=1), o no está (<em>z</em>=0) en el lugar. Simulado a partir de una distribución Bernoulli. </p>
 
-<p><img src="assets/fig/occumodel-1.png" alt="plot of chunk occumodel"></p>
+<p><img src="figure/occumodel-1.png" alt="plot of chunk occumodel"></p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -147,7 +147,7 @@ La especie está (<em>z</em>=1), o no está (<em>z</em>=0) en el lugar. Simulado
 <p>El cual gobierna la observación de la especie.
 La especie se observa (<em>p</em>=1), si es que la especie esta. Prob. condicional. Simulado con una distribución Bernoulli por el proceso ecologico. </p>
 
-<p><img src="assets/fig/obsmodel-1.png" alt="plot of chunk obsmodel"></p>
+<p><img src="figure/obsmodel-1.png" alt="plot of chunk obsmodel"></p>
 
 </div>
   </article>
@@ -165,11 +165,11 @@ La especie se observa (<em>p</em>=1), si es que la especie esta. Prob. condicion
 
 <h3>El modelo de observación (\(p\)) sigue una distribución Bernoulli.</h3>
 
-<p>La probabilidad de ocurrencia, es una proporcion tambien (ocupación) </p>
+<p>La probabilidad de ocurrencia, es tambien una proporcion (ocupación):   </p>
 
 <p>\(\psi\) = Pr(\(z_{i}\)=1)  </p>
 
-<p>La probabilidad de observar la especie dado que la especie esta presente es.  </p>
+<p>La probabilidad de observar la especie dado que la especie esta presente es:    </p>
 
 <p>\(p\) = Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)  </p>
 
@@ -344,7 +344,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
   geom_smooth(method = &quot;glm&quot;, method.args = list(family = &quot;binomial&quot;))
 </code></pre>
 
-<p><img src="assets/fig/logist-1.png" alt="plot of chunk logist"></p>
+<p><img src="figure/logist-1.png" alt="plot of chunk logist"></p>
 
 <div style='float:left;width:48%;' class='centered'>
   
@@ -424,11 +424,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 </tr>
 <tr>
 <td></td>
-<td>8. Modelo de occu. dinamico (ML y Bayes)</td>
-</tr>
-<tr>
-<td></td>
-<td>9. Otros modelos jerárquicos</td>
+<td>8. Otros modelos jerárquicos</td>
 </tr>
 </tbody></table>
 
