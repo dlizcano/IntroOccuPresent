@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>R como herramienta de modelado</title>
+  <title>Modelo de occupacion estatico</title>
   <meta charset="utf-8">
-  <meta name="description" content="R como herramienta de modelado">
+  <meta name="description" content="Modelo de occupacion estatico">
   <meta name="author" content="Diego J. Lizcano">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -45,8 +45,8 @@
     <img src="assets/img/TSG.png">
   </aside>
   <hgroup class="auto-fadein">
-    <h1>R como herramienta de modelado</h1>
-    <h2>Modelos 101</h2>
+    <h1>Modelo de occupacion estatico</h1>
+    <h2>Modelos Unmarked 101</h2>
     <p>Diego J. Lizcano<br/>ULEAM, Manta</p>
   </hgroup>
     <a href="https://github.com/dlizcano/IntroOccuPresent/zipball/gh-pages" class="example">
@@ -64,17 +64,18 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Unmarked</h2>
+    <h2><a href="https://www.jstatsoft.org/article/view/v043i10">Unmarked</a></h2>
   </hgroup>
   <article data-timings="">
     <h3>El paquete por exelencia para analisis de abundancia en fauna.</h3>
 
+<p><img src="assets/img/unmarked.jpg" alt="unmarked"></p>
+
 <ul class = "build incremental">
 <li>Modela ocupación, abundancia y densidad de animales NO marcados. </li>
-<li>Contrasta con el programa Mark</li>
+<li>Analogo al <a href="http://www.mbr-pwrc.usgs.gov/software/presence.html">programa Presence</a></li>
+<li>Contrasta con el <a href="http://warnercnr.colostate.edu/%7Egwhite/mark/mark.htm">programa Mark</a></li>
 </ul>
-
-<p><img src="assets/img/unmarked.jpg" alt="unmarked"></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -82,16 +83,18 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Tipos de modelos:</h2>
+    <h2>Tipos de modelos en unmarked:</h2>
   </hgroup>
   <article data-timings="">
-    <p>• Single-season site occupancy model (MacKenzie et al., 2002)
-• Royle-Nichols model (Royle and Nichols, 2003)
-• Binomial N-mixture models (Royle, 2004b)
-• Multinomial N-mixture models (Royle, 2004a)
-• Distance sampling models (Royle et al., 2004)
-• “Open population” versions of the above: (MacKenzie et al., 2003; Chandler
-et al., 2011; Dail and Madsen, 2011)</p>
+    <ul class = "build incremental">
+<li>Single-season site occupancy model (MacKenzie et al., 2002)</li>
+<li>Royle-Nichols model (Royle and Nichols, 2003)</li>
+<li>Binomial N-mixture models (Royle, 2004b)</li>
+<li>Multinomial N-mixture models (Royle, 2004a)</li>
+<li>Distance sampling models (Royle et al., 2004)</li>
+<li>“Open population” versions of the above: (MacKenzie et al., 2003; Chandler
+et al., 2011; Dail and Madsen, 2011)</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -155,7 +158,8 @@ et al., 2011; Dail and Madsen, 2011)</p>
 <ul class = "build incremental">
 <li>Las unidades de muestreo son los sitios </li>
 <li>Idealmente debe haber por lo menos 3 visitas por sitio</li>
-<li>Las covariables idealmente en otra tabla. Coviariables de sitio y covariables de observacion (varias tablas)</li>
+<li>Las covariables idealmente en otra tabla. </li>
+<li>Coviariables de sitio y covariables de observacion (varias tablas).</li>
 </ul>
 
   </article>
@@ -180,7 +184,24 @@ et al., 2011; Dail and Madsen, 2011)</p>
 
 <slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>Ejemplo del paquete</h2>
+    <h2>Simulación y ejemplo del modelo basico.</h2>
+  </hgroup>
+  <article data-timings="">
+    <h2>Ejemplo del modelo estatico (Mackenzie 2002), una temporada (single season).</h2>
+
+<h3>Iniciar un proyecto nuevo en Rstudio</h3>
+
+<p>Bajar el <a href="https://gist.github.com/dlizcano/466eb0abc55c0957e441f091a7659330">codigo</a></p>
+
+<p>Bajar los <a href="https://github.com/dlizcano/IntroOccuPresent/tree/gh-pages/data">datos</a> e instalar en la carpeta data</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Ejemplo de analisis con covariables</h2>
   </hgroup>
   <article data-timings="">
     <p>vinieta de unmarkedFrameOccu</p>
@@ -188,31 +209,16 @@ et al., 2011; Dail and Madsen, 2011)</p>
 <pre><code class="r"># Fake data
 R &lt;- 4 # number of sites
 J &lt;- 3 # number of visits
-y &lt;- matrix(c(
-   1,1,0,
-   0,0,0,
-   1,1,1,
-   1,0,1), nrow=R, ncol=J, byrow=TRUE)
-y
-
+y &lt;- matrix(c(1,1,0,0,0,0,1,1,1,1,0,1), nrow=R, ncol=J, byrow=TRUE)
 site.covs &lt;- data.frame(x1=1:4, x2=factor(c(&#39;A&#39;,&#39;B&#39;,&#39;A&#39;,&#39;B&#39;)))
-site.covs
-
 obs.covs &lt;- list(
-   x3 = matrix(c(
-      -1,0,1,
-      -2,0,0,
-      -3,1,0,
-      0,0,0), nrow=R, ncol=J, byrow=TRUE),
+   x3 = matrix(c(-1,0,1,-2,0,0,-3,1,0,0,0,0), nrow=R, ncol=J, byrow=TRUE),
    x4 = matrix(c(
       &#39;a&#39;,&#39;b&#39;,&#39;c&#39;,
       &#39;d&#39;,&#39;b&#39;,&#39;a&#39;,
       &#39;a&#39;,&#39;a&#39;,&#39;c&#39;,
       &#39;a&#39;,&#39;b&#39;,&#39;a&#39;), nrow=R, ncol=J, byrow=TRUE))
-obs.covs
-
-umf &lt;- unmarkedFrameOccu(y=y, siteCovs=site.covs, 
-    obsCovs=obs.covs)   # organize data
+umf &lt;- unmarkedFrameOccu(y=y, siteCovs=site.covs, obsCovs=obs.covs) # organize data
 umf                     # look at data
 summary(umf)            # summarize      
 fm &lt;- occu(~1 ~1, umf)  # fit a model
@@ -222,9 +228,18 @@ fm &lt;- occu(~1 ~1, umf)  # fit a model
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Para el Sabado: bajar e instalar Programa JAGS</h2>
+  </hgroup>
   <article data-timings="">
-    
+    <h2>Paquetes: R2jags, spatstat, raster, rgeos, sp</h2>
+
+<ul class = "build incremental">
+<li>Ademas deben traer muchas ganas y...</li>
+<li><img src="assets/img/coffee.png" alt="guayusa"></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -235,13 +250,13 @@ fm &lt;- occu(~1 ~1, umf)  # fit a model
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Unmarked'>
+        data-slide=1 title='<a href="https://www.jstatsoft.org/article/view/v043i10">Unmarked</a>'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Tipos de modelos:'>
+        data-slide=2 title='Tipos de modelos en unmarked:'>
          2
       </a>
     </li>
@@ -265,14 +280,20 @@ fm &lt;- occu(~1 ~1, umf)  # fit a model
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Ejemplo del paquete'>
+        data-slide=6 title='Simulación y ejemplo del modelo basico.'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='NA'>
+        data-slide=7 title='Ejemplo de analisis con covariables'>
          7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Para el Sabado: bajar e instalar Programa JAGS'>
+         8
       </a>
     </li>
   </ul>

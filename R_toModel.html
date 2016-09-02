@@ -89,12 +89,12 @@
     <p>Como el tamanio de la muestra afecta la distribución de la media?. Usaremos el set de datos iris de R y la columna largo del petalo. </p>
 
 <pre><code class="r">str(iris)
-iter &lt;- 10000 # Numero de iteraciones
-n &lt;- 3 # numero de datos que muestreo. hasta 150
+iter &lt;- 1000 # Numero de iteraciones
+n &lt;- 1 # numero de datos que muestreo. Variar hasta 150
 means &lt;- rep(NA, iter) # aca almaceno las medias de cada iteracion
 
 for (i in 1:iter){
-  d &lt;- sample(iris$Petal.Length, n) # sample toma 5 n datos 
+  d &lt;- sample(iris$Petal.Length, n) # sample toma n (1) datos 
   means[i] &lt;- mean(d) # saca la media y guarda en means 
 }
 
@@ -108,6 +108,30 @@ abline(v=mean(iris$Petal.Length), lty=2, lwd=3, col=&quot;blue&quot;)
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
+    <h2>Algebra del modelo de regresión lineal</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br /></p>
+
+<p>\[
+\begin{aligned}
+y = \alpha + \beta x + \epsilon
+\end{aligned}
+\]</p>
+
+<ul class = "build incremental">
+<li><p>donde \(\alpha\)  y \(\beta\) son parametros del modelo y \(\epsilon\) el error del modelo.</p></li>
+<li><p>\(\alpha\) corresponde al intercepto </p></li>
+<li><p>\(\beta\) corresponde al coeficiente de x (pendiente).</p></li>
+<li><p>cuando \(\beta\) = 0, no hay relación significativa entre las variables x y y.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
     <h2>Modelo de regresión lineal</h2>
   </hgroup>
   <article data-timings="">
@@ -119,17 +143,42 @@ model1 &lt;- lm(Sepal.Length~Petal.Length, data=iris)
 summary(model1)
 library(ggplot2)
 ggplot(model1, aes(x=Petal.Length, y=Sepal.Length)) + geom_point() + 
-  geom_smooth(method = &quot;lm&quot;)
+  geom_smooth(method = &quot;lm&quot;) # try geom_smooth()
 
-newdato &lt;- data.frame(Petal.Length= seq(2, 3, by=0.1))
-predict(model1, newdata =newdato) # predice sepalo cuando petalo es de 2 a 3
+newdato &lt;- data.frame(Petal.Length=seq(4, 7, by=0.1))
+predict(model1, newdata = newdato) # predice sepalo cuando petalo es de 4 a 7
 </code></pre>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Modelo de regresión lineal con 2 o mas predictores</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Usaremos el set de datos iris de R. Use +   para combinar efectos. :    para interacciones A:B; y asterisco (*) para efectos e interacciones, ej A*B = A+B+A:B</p>
+
+<pre><code class="r">str(iris)
+
+model1a &lt;- lm(Sepal.Length~Petal.Length * Petal.Width, data=iris)
+summary(model1a)
+library(lattice)
+newdato&lt;-expand.grid(list(Petal.Length = seq(4, 7, length.out=100), 
+                          Petal.Width=seq(1, 2.5, length.out=100)))
+newdato$Sepal.Length&lt;-predict(model1a, newdata = newdato) # predice sepalo con petalo de 4 a 7 y 1 a 2.5
+
+levelplot(Sepal.Length~Petal.Length + Petal.Width, data=newdato,
+  xlab = &quot;Petal.Length&quot;, ylab = &quot;Petal.Width&quot;,
+  main = &quot;Surface of Sepal.Length&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>Modelo de regresión Logistico</h2>
   </hgroup>
@@ -138,12 +187,14 @@ predict(model1, newdata =newdato) # predice sepalo cuando petalo es de 2 a 3
 
 <pre><code class="r">data(mtcars)
 
-model1 &lt;- glm(vs~mpg, data=mtcars)
-summary(model1)
-
+model2 &lt;- glm(vs~mpg, data=mtcars, family = binomial(link = &quot;logit&quot;))
+summary(model2)
 library(ggplot2)
 ggplot(mtcars, aes(x=mpg, y=vs)) + geom_point() + 
   geom_smooth(method = &quot;glm&quot;, method.args = list(family = &quot;binomial&quot;))
+
+newdato2 &lt;- data.frame(mpg= seq(20, 30, by=0.5))
+predict(model2, newdata = newdato2, type=&#39;response&#39;) # predice vs cuando mpg es de 20 a 30
 </code></pre>
 
   </article>
@@ -168,14 +219,26 @@ ggplot(mtcars, aes(x=mpg, y=vs)) + geom_point() +
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Modelo de regresión lineal'>
+        data-slide=3 title='Algebra del modelo de regresión lineal'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Modelo de regresión Logistico'>
+        data-slide=4 title='Modelo de regresión lineal'>
          4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Modelo de regresión lineal con 2 o mas predictores'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Modelo de regresión Logistico'>
+         6
       </a>
     </li>
   </ul>
