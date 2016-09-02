@@ -19,11 +19,18 @@ github      : {user: dlizcano, repo: IntroOccuPresent}
 knit        : slidify::knit2slides
 ---
 
-# Simulaciones y modelos
+## Modelos y simulaciones en ecología
+
+> - Un modelo en ecología es la descripción matemática de un sistema ecológico. 
+
+> - Cuando la descripción se hace con un propósito practico se llama simulación.  
+
+> -  Mas sobre [modelos en ecología](http://www.planta.cn/forum/files_planta/an_introduction_to_mathematical_models_in_ecology_336.pdf)
+
 
 --- &twocol
 
-## Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros que afectan los estimados de otros parámetros.  
+## Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros, que afectan los estimados de otros parámetros.  
 
 
 *** =left
@@ -35,6 +42,8 @@ Statististics prof. Univ Princeton
 Student of Egon Pearson
 Box-Cox transformation
 ```
+
+Mas sobre [George Box](https://en.wikipedia.org/wiki/George_E._P._Box) 
 
 *** =right
 
@@ -66,7 +75,7 @@ Box-Cox transformation
 
 
 
-## Vamos a realizar una simulacion de la ocupación ($\psi$) y la detectabilidad (_p_).    
+## Vamos a realizar una simulación de la ocupación ($\psi$) y la detectabilidad (_p_).    
 
 ---.segue bg:black
 
@@ -110,14 +119,15 @@ El cual gobierna la observación de la especie.
 <img src="assets/img/hmodel.png"  align="right" />
 
 
-### El proceso ecológico ($\psi$) sigue una distribución Bernoulli.
-### El modelo de observación ($p$) sigue una distribución Bernoulli.  
+> -  El proceso ecológico ($\psi$) sigue una distribución Bernoulli.
 
-La probabilidad de ocurrencia, es tambien una proporcion (ocupación):   
+> -  El modelo de observación ($p$) sigue una distribución Bernoulli.  
+
+> -  La probabilidad de ocurrencia tambien es tambien una proporcion (ocupación):   
 
 $\psi$ = Pr($z_{i}$=1)  
 
-La probabilidad de observar la especie dado que la especie esta presente es:    
+> -  La probabilidad de observar la especie dado que la especie esta presente es:    
 
 $p$ = Pr($y_{i}$=1 $\mid$ $z_{i}$=1)  
 
@@ -161,9 +171,9 @@ ggplot(daber, aes(x=estimado)) +
 
 ### Ocupación y covariables
 
-La ocupación ($\psi$) es un conjunto de 1s y 0s.  
+> -  La ocupación ($\psi$) es un conjunto de 1s y 0s.  
 
-Las covariables pueden ser continuas o discretas.  
+> -  Las covariables pueden ser continuas o discretas.  
 
 
 
@@ -181,9 +191,9 @@ Las covariables pueden ser continuas o discretas.
 
 ### Observación y covariables
 
-La Observaciones son un conjunto de 1s y 0s.  
+> -  La Observaciones son un conjunto de 1s y 0s.  
 
-Las covariables pueden ser continuas o discretas. 
+> -  Las covariables pueden ser continuas o discretas. 
 
 
 
@@ -217,14 +227,20 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 
 
 ---.hundred50
-# Regresión logistica permite encontrar la relación entre una variable binaria y covariables
+# Regresión logistica permite encontrar la relación entre una variable binaria y covariables.
 
 
+La regresion logistica tiene la forma:
 
+$y = { 1 \over 1 + e^{ -(\alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon) } }$
+
+Aplicando el "truco algebraico" de la funcion logit, adopta la forma:
+
+$ logit(y) = \alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon$
 
 --- 
 
-## Poniendo todo junto
+## Poniendo todo junto...
 
   
 ![Coding now](assets/img/Occu_Bayes.png)
@@ -242,7 +258,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 |Jueves       | 1. Introducción a R                            |
 |             | 2. R como herramienta de modelado              |
 |Viernes      | 3. El concepto de ocupación y su modelado      |
-|             | 4. Modelo occu. estático - 101 unmarked        |
+|             | 4. Modelo occu. estático - [ unmarked101](https://dlizcano.github.io/IntroOccuPresent/unmarked_101.html#1)        |
 |Sab Mañ      | 5. Modelo occu. estático - Sim Machalilla      |
 |             | 6. Modelo occu. estático - Unm Machalilla      |
 |Sab Tar      | 7. Modelo occu. estático - Bayes Machalilla    |

@@ -64,17 +64,22 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h1>Simulaciones y modelos</h1>
+    <h2>Modelos y simulaciones en ecología</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul class = "build incremental">
+<li><p>Un modelo en ecología es la descripción matemática de un sistema ecológico. </p></li>
+<li><p>Cuando la descripción se hace con un propósito practico se llama simulación.  </p></li>
+<li><p>Mas sobre <a href="http://www.planta.cn/forum/files_planta/an_introduction_to_mathematical_models_in_ecology_336.pdf">modelos en ecología</a></p></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros que afectan los estimados de otros parámetros.</h2>
+    <h2>Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros, que afectan los estimados de otros parámetros.</h2>
   </hgroup>
   <article data-timings="">
     
@@ -85,6 +90,8 @@ Statististics prof. Univ Princeton
 Student of Egon Pearson
 Box-Cox transformation
 </code></pre>
+
+<p>Mas sobre <a href="https://en.wikipedia.org/wiki/George_E._P._Box">George Box</a> </p>
 
 </div>
 <div style='float:right;width:48%;'>
@@ -122,7 +129,7 @@ Box-Cox transformation
 
 <slide class="segue" id="slide-4" style="background:black;">
   <hgroup>
-    <h2>Vamos a realizar una simulacion de la ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).</h2>
+    <h2>Vamos a realizar una simulación de la ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).</h2>
   </hgroup>
   <article data-timings="">
     
@@ -182,15 +189,17 @@ Box-Cox transformation
   <article data-timings="">
     <p><img src="assets/img/hmodel.png"  align="right" /></p>
 
-<h3>El proceso ecológico (\(\psi\)) sigue una distribución Bernoulli.</h3>
-
-<h3>El modelo de observación (\(p\)) sigue una distribución Bernoulli.</h3>
-
-<p>La probabilidad de ocurrencia, es tambien una proporcion (ocupación):   </p>
+<ul class = "build incremental">
+<li><p>El proceso ecológico (\(\psi\)) sigue una distribución Bernoulli.</p></li>
+<li><p>El modelo de observación (\(p\)) sigue una distribución Bernoulli.  </p></li>
+<li><p>La probabilidad de ocurrencia tambien es tambien una proporcion (ocupación):   </p></li>
+</ul>
 
 <p>\(\psi\) = Pr(\(z_{i}\)=1)  </p>
 
-<p>La probabilidad de observar la especie dado que la especie esta presente es:    </p>
+<ul class = "build incremental">
+<li> La probabilidad de observar la especie dado que la especie esta presente es:<br></li>
+</ul>
 
 <p>\(p\) = Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)  </p>
 
@@ -244,9 +253,10 @@ ggplot(daber, aes(x=estimado)) +
 <div style='float:left;width:48%;' class='centered'>
   <h3>Ocupación y covariables</h3>
 
-<p>La ocupación (\(\psi\)) es un conjunto de 1s y 0s.  </p>
-
-<p>Las covariables pueden ser continuas o discretas.  </p>
+<ul class = "build incremental">
+<li><p>La ocupación (\(\psi\)) es un conjunto de 1s y 0s.  </p></li>
+<li><p>Las covariables pueden ser continuas o discretas.  </p></li>
+</ul>
 
 <table><thead>
 <tr>
@@ -300,9 +310,10 @@ ggplot(daber, aes(x=estimado)) +
 <div style='float:right;width:48%;'>
   <h3>Observación y covariables</h3>
 
-<p>La Observaciones son un conjunto de 1s y 0s.  </p>
-
-<p>Las covariables pueden ser continuas o discretas. </p>
+<ul class = "build incremental">
+<li><p>La Observaciones son un conjunto de 1s y 0s.  </p></li>
+<li><p>Las covariables pueden ser continuas o discretas. </p></li>
+</ul>
 
 <table><thead>
 <tr>
@@ -379,17 +390,24 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 
 <slide class="hundred50" id="slide-12" style="background:;">
   <hgroup>
-    <h1>Regresión logistica permite encontrar la relación entre una variable binaria y covariables</h1>
+    <h1>Regresión logistica permite encontrar la relación entre una variable binaria y covariables.</h1>
   </hgroup>
   <article data-timings="">
-    
+    <p>La regresion logistica tiene la forma:</p>
+
+<p>\(y = { 1 \over 1 + e^{ -(\alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon) } }\)</p>
+
+<p>Aplicando el &quot;truco algebraico&quot; de la funcion logit, adopta la forma:</p>
+
+<p>$ logit(y) = \alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon$</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-13" style="background:;">
   <hgroup>
-    <h2>Poniendo todo junto</h2>
+    <h2>Poniendo todo junto...</h2>
   </hgroup>
   <article data-timings="">
     <p><img src="assets/img/Occu_Bayes.png" alt="Coding now"></p>
@@ -429,7 +447,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
 </tr>
 <tr>
 <td></td>
-<td>4. Modelo occu. estático - 101 unmarked</td>
+<td>4. Modelo occu. estático - <a href="https://dlizcano.github.io/IntroOccuPresent/unmarked_101.html#1"> unmarked101</a></td>
 </tr>
 <tr>
 <td>Sab Mañ</td>
@@ -482,13 +500,13 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Simulaciones y modelos'>
+        data-slide=1 title='Modelos y simulaciones en ecología'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros que afectan los estimados de otros parámetros.'>
+        data-slide=2 title='Las simulaciones son versiones simplificadas de un sistema real, en el cual podemos probar como varían ciertos parámetros, que afectan los estimados de otros parámetros.'>
          2
       </a>
     </li>
@@ -500,7 +518,7 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Vamos a realizar una simulacion de la ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).'>
+        data-slide=4 title='Vamos a realizar una simulación de la ocupación (\(\psi\)) y la detectabilidad (<em>p</em>).'>
          4
       </a>
     </li>
@@ -548,13 +566,13 @@ ggplot(table3, aes(x=cov1, y=obs)) + geom_point() +
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Regresión logistica permite encontrar la relación entre una variable binaria y covariables'>
+        data-slide=12 title='Regresión logistica permite encontrar la relación entre una variable binaria y covariables.'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Poniendo todo junto'>
+        data-slide=13 title='Poniendo todo junto...'>
          13
       </a>
     </li>
