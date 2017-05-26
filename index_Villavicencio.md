@@ -29,9 +29,9 @@ Quienes han hecho posible este curso !
 
 ---.segue .centrepre .bigger bg:black
 
-## Descargar Diapositivas de:
-
 ## https://goo.gl/A6e9hr
+
+## Descargar Diapositivas de:
 
 ---
 
