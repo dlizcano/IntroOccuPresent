@@ -169,7 +169,7 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 ## [Wildlife Coservation Society, WCS](http://global.wcs.org/Our-Impact/Species.aspx)
 ## [Advances and applications of occupancy models,  MEE](http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12100/abstract)
 ## [Detecting diversity, TrEE](https://nature.berkeley.edu/beislab/BeissingerLab/publications/Iknayan_etal_2014_TREE_nocover.pdf)
-##[Modelling of species distributions, under imperfect detection, MEE](http://onlinelibrary.wiley.com/doi/10.1111/ecog.02445/full)
+## [Modelling of species distributions, under imperfect detection, MEE](http://onlinelibrary.wiley.com/doi/10.1111/ecog.02445/full)
 
 
 ---
