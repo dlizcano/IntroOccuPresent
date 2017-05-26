@@ -386,7 +386,7 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 |Sab Mañ      | 5. Modelo occu. estático - [Sim Machalilla](https://dlizcano.github.io/IntroOccuBook/)       |
 |             | 6. Modelo occu. estático - [Unm Machalilla](https://dlizcano.github.io/IntroOccuBook/unmarked.html#poniendo-los-datos-en-unmarked)      |
 |Sab Tar      | _7. Modelo occu. estático - Bayes Machalilla_  |
-|             | 9. Preguntas y Datos del mundo real - Pecari   |
+|             | 9. Preguntas y Datos del mundo real - [Pecari](https://github.com/dlizcano/IntroOccuPresent/raw/gh-pages/code/Pecari.rar)   |
 |             | 10. [Otros modelos jerárquicos](https://dlizcano.github.io/IntroOccuPresent/Otros_modelos_jerarquicos.html)      |
 
 

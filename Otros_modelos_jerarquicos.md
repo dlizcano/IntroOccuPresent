@@ -1,10 +1,10 @@
 ---
 title       : "Otros modelos jerárquicos"
 subtitle    : Densidad, Diversidad, comunidades 
-author      : Diego J. Lizcano
-job         : ULEAM, Manta
-logo        : TSG.png
-biglogo     : tsg_logo.gif
+author      : Diego J. Lizcano, Ph.D.
+job         : Unillanos, Villavicencio
+logo        : TNC_logo.png
+biglogo     : TNC.png
 
 twitter     : dlizcano
 license     : by-nc-sa  
@@ -14,6 +14,7 @@ hitheme     : tomorrow      #
 widgets     : [mathjax, bootstrap, quiz]# 
 mode        : selfcontained # {standalone, draft}
 assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"}
+
 
 github      : {user: dlizcano, repo: IntroOccuPresent}
 knit        : slidify::knit2slides

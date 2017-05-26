@@ -1,10 +1,10 @@
 ---
 title       : El concepto de ocupacion y su modelado
 subtitle    : Modelo estatico de ocupacion
-author      : Diego J. Lizcano
-job         : ULEAM, Manta
-logo        : TSG.png
-biglogo     : tsg_logo.gif
+author      : Diego J. Lizcano, Ph.D.
+job         : Unillanos, Villavicencio
+logo        : TNC_logo.png
+biglogo     : TNC.png
 
 twitter     : dlizcano
 license     : by-nc-sa  
