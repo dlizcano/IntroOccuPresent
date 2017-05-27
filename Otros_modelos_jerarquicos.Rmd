@@ -73,7 +73,7 @@ et al., 2011; Dail and Madsen, 2011) ->pcountOpen, qdistsamp
 
 
 <q> 
-Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.surveymonkey.com/r/QCRLXDP) (8 minutos).  Todas las respuestas son anónimas.
+Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.surveymonkey.com/r/D286WDL) (8 minutos).  Todas las respuestas son anónimas.
 </q> 
 
 
