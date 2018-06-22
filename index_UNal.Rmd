@@ -29,7 +29,7 @@ Quienes han hecho posible este curso !
 
 ---.segue .centrepre .bigger bg:black
 
-## https://dlizcano.github.io/IntroOccuPresent/index_UNal
+## https://tinyurl.com/ycezxwzl
 
 ## Descargar Diapositivas de:
 
