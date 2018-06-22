@@ -177,7 +177,7 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 ## Así debería verse una tabla de datos con muestreos repetidos.
   
 
-```{r eval=TRUE, echo=FALSE}
+```{r eval=TRUE, echo=FALSE, warning=FALSE}
 library(knitr)
 muestreo<-c("visita 1","visita 2", "visita 3", "visita 4")
 Sitio<-c("sitio 1", "sitio 2", "sitio 3", "sitio X")

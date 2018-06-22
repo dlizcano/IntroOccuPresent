@@ -178,12 +178,6 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
   
 
 
-```
-## Warning: package 'knitr' was built under R version 3.4.4
-```
-
-
-
 |        | visita 1| visita 2| visita 3| visita 4|
 |:-------|--------:|--------:|--------:|--------:|
 |sitio 1 |        1|        0|        0|        1|
