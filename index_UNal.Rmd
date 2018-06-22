@@ -322,14 +322,14 @@ Es importante entender que hay dos procesos que se pueden modelar de forma jerar
 
 --- &twocol
 
-## [Andy Royle](https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/content_grid/public/thumbnails/image/Dr%20Andy%20Royle.jpg) 
+## [Andy Royle](https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products) 
   
 
   
 *** =left
 
 
-![Andy Royle](http://www.pwrc.usgs.gov/staff/profiles/images/royle.jpg)
+![Andy Royle](https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/content_grid/public/thumbnails/image/Dr%20Andy%20Royle.jpg)
 
 Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupación
 
