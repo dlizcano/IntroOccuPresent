@@ -2,7 +2,7 @@
 title       : Abundancia
 subtitle    : Entendiendo el contexto y la historia
 author      : Diego J. Lizcano, Ph.D.
-job         : Unillanos, Villavicencio
+job         : ICN, U. Nacional / Bogota
 logo        : TNC_logo.png
 biglogo     : TNC.png
 
