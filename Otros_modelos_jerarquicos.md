@@ -78,10 +78,11 @@ et al., 2011; Dail and Madsen, 2011) ->pcountOpen, qdistsamp
 
 
 
+---
 
-#Espero que lo hayamos logrado! 
+## Espero que lo hayamos logrado! 
 
-## Gracias...
+# Gracias...
 
 
 

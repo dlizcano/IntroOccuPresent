@@ -95,10 +95,11 @@ Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.s
 
 ```
 
+---
 
-#Espero que lo hayamos logrado! 
+## Espero que lo hayamos logrado! 
 
-## Gracias...
+# Gracias...
 
 
 
