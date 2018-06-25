@@ -13,7 +13,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax, bootstrap, quiz]# 
 mode        : selfcontained # {standalone, draft}
-assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"}
+assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
 
 
 github      : {user: dlizcano, repo: IntroOccuPresent}
@@ -97,9 +97,10 @@ Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.s
 
 ---
 
-## Espero que lo hayamos logrado! 
+## <i class="fa fa-handshake-o"></i>  
+## Gracias...
 
-# Gracias...
+
 
 
 

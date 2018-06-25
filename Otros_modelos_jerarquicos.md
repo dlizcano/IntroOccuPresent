@@ -13,7 +13,7 @@ highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax, bootstrap, quiz]# 
 mode        : selfcontained # {standalone, draft}
-assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"}
+assets      : {js: 'test.js', css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
 
 
 github      : {user: dlizcano, repo: IntroOccuPresent}
@@ -80,9 +80,8 @@ et al., 2011; Dail and Madsen, 2011) ->pcountOpen, qdistsamp
 
 ---
 
-## Espero que lo hayamos logrado! 
-
-# Gracias...
+## <i class="fa fa-handshake-o"></i>  
+## Gracias...
 
 
 
