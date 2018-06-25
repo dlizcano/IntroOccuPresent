@@ -2,7 +2,7 @@
 title       : "Otros modelos jerárquicos"
 subtitle    : Densidad, Diversidad, comunidades 
 author      : Diego J. Lizcano, Ph.D.
-job         : UNal, Bogotá
+job         : ICN - UNal, Bogotá
 logo        : TNC_logo.png
 biglogo     : TNC.png
 
