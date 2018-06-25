@@ -83,11 +83,17 @@ et al., 2011; Dail and Madsen, 2011) ->pcountOpen, qdistsamp
 ## Gracias...
 
 
-<button type="button" class="btn btn-default btn-lg">
-  <i class="fa fa-handshake-o"></i> Handshake 
-</button>
+<div class="container">
+  <p> </p>
+   <p class="text-center">
+    <h1 class="fa fa-handshake-o"> </h1>
+    <h1>Espero que lo hayamos logrado!</h1>
+   </p>
+</div>
 
---- .segue #towork bg:url(assets/img/Occu_Bayes.png)
+
+
+
 
 
 
