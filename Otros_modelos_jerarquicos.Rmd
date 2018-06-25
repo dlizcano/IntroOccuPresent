@@ -91,18 +91,17 @@ Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.s
 --- .segue #towork bg:url(assets/img/children-593313_1280.jpg)
 
 
-
+--- .segue #towork bg:url(assets/img/Occu_Bayes.png)
 
 ```
 
 
-## Espero que lo hayamos logrado! 
-
+#Espero que lo hayamos logrado! 
 
 ## Gracias...
 
 
---- .segue #towork bg:url(assets/img/Occu_Bayes.png)
+
 
 
 
