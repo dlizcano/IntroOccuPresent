@@ -103,7 +103,8 @@ Por favor ayudeme a mejorar este curso respondiendo [esta encuesta](https://es.s
 <div class="container">
   <p> </p>
    <p class="text-center">
-   <i class="fa fa-handshake-o fa-6x"></i> 
+   <i class="fa fa-handshake-o fa-5x"></i> 
+   <p> </p>
     <h1>Espero que lo hayamos logrado!</h1>
    </p>
 </div>

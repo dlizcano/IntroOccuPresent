@@ -86,7 +86,8 @@ et al., 2011; Dail and Madsen, 2011) ->pcountOpen, qdistsamp
 <div class="container">
   <p> </p>
    <p class="text-center">
-   <i class="fa fa-handshake-o fa-6x"></i> 
+   <i class="fa fa-handshake-o fa-5x"></i> 
+   <p> </p>
     <h1>Espero que lo hayamos logrado!</h1>
    </p>
 </div>
