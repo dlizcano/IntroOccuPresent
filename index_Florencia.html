@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Abundancia</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Abundancia">
+  <meta name="author" content="Diego J. Lizcano, Ph.D.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/TNC.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/TNC_logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Abundancia</h1>
+    <h2>Entendiendo el contexto y la historia</h2>
+    <p>Diego J. Lizcano, Ph.D.<br/>U. Amazonia / Florencia, Caquetá</p>
+  </hgroup>
+    <a href="https://github.com/dlizcano/IntroOccuPresent/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Gracias Prof. Alexander, Alejandra</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/alexander_aleja.png" alt="Gracias"> </p>
+
+<p>Quienes han hecho posible este curso !</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue centrepre bigger" id="slide-2" style="background:black;">
+  <hgroup>
+    <h2><a href="https://tinyurl.com/ycezxwzl">https://tinyurl.com/ycezxwzl</a></h2>
+  </hgroup>
+  <article data-timings="">
+    <h2>Descargar Diapositivas de:</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-3" style="background:black;">
+  <article data-timings="">
+    <p><q> 
+La Ecología:  Estudio de las interacciones que determinan la <strong>distribución y abundancia</strong>.
+</q> </p>
+
+<p> 
+ 
+</p>
+
+<h3><a href="https://www.amazon.com/Charles-J.-Krebs/e/B001ITXN5Q/ref=dp_byline_cont_book_1">Charles. Krebs</a></h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h1>Distribución y abundancia</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Donde están los organismos y cuantos son ?</h2>
+
+<h3>Relacionado con el problema de contar animales en ecología</h3>
+
+<ul class = "build incremental">
+<li>A diferencia de las plantas... </li>
+<li>Los animales se mueven!</li>
+<li><img src="https://media.giphy.com/media/11aqMcSy5tsgow/giphy.gif" alt="duck moving"></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>El mapa que todos queremos!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/kanguro.png" alt="Mapa de densidad"></p>
+
+<h4>Hay que contar los canguros</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h1>Contar Animales</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/pinguinos.jpg" alt="Obtener densidad">  </p>
+
+<h4>Facil para animales que conspicuos que se agrupan.</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h1>Contar Animales</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/432.jpg" alt="Obtener densidad"></p>
+
+<h4>No tan facil si no se agrupan. Metodos de Captura - Marca - Recaptura. Distance</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h1>Contar Animales</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Moose-capture_011.jpg" alt="Obtener densidad"></p>
+
+<h4>Para algunas especies es engorroso, poco practico y muy costoso</h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-9" style="background:green;">
+  <hgroup>
+    <h2>Abundancia relativa: Una variable indicadora del estado de la población</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="vcenter" id="slide-10" style="background:url(assets/img/bird_abundance.jpg);">
+  <hgroup>
+    <h2>No se cuantos hay pero si donde hay mas y donde hay menos.</h2>
+  </hgroup>
+  <article data-timings="">
+    <h5><a href="http://www.stateofthebirds.org/2016/resources/species-abundance-maps/wood-thrush/#_ga=1.58268970.1097663810.1456855475">http://www.stateofthebirds.org/2016/resources/species-abundance-maps/wood-thrush/#_ga=1.58268970.1097663810.1456855475</a></h5>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-11" style="background:gray;">
+  <hgroup>
+    <h2>Pero debo tener en cuenta que:</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Los muestreos no son infalibles</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="http://i.giphy.com/nejXhE8hnCiQ0.gif" align="left" /></p>
+
+<p><img src="https://media.giphy.com/media/rL5fh3o1NFl28/giphy.gif" alt="sampling error"></p>
+
+<h3>La detectabilidad, una combinacion de factores que depende de:</h3>
+
+<ul class = "build incremental">
+<li>1. Las condiciones del muestreo (clima, hora)</li>
+<li>2. La habilidad del observador (sensor)</li>
+<li>3. La biología de la especie que se muestrea</li>
+<li>Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Como ocurre el error de detección</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/detection.png" alt="detection"></p>
+
+<p>Es un error importante que debe considerarse en los muestreos!!! </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h1>Mackenzie et al 2002, 2003 al rescate</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/mackenzie.png" alt="Mackenzie paper"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Libro y programa presence (2006)</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/mackenziebook.jpg" alt="Mackenzie book"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://www.mbr-pwrc.usgs.gov/software/doc/presence/falsePos.jpg" alt="presence software"></p>
+
+<p>Populariza la ocupación (\(\psi\)) como proxi de la abundancia teniendo en cuenta la detectabilidad (\(p\))</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h1>La ocupación en acción.</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2><a href="http://global.wcs.org/Our-Impact/Species.aspx">Wildlife Coservation Society, WCS</a></h2>
+
+<h2><a href="http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12100/abstract">Advances and applications of occupancy models,  MEE</a></h2>
+
+<h2><a href="https://nature.berkeley.edu/beislab/BeissingerLab/publications/Iknayan_etal_2014_TREE_nocover.pdf">Detecting diversity, TrEE</a></h2>
+
+<h2><a href="http://onlinelibrary.wiley.com/doi/10.1111/ecog.02445/full">Modelling of species distributions, under imperfect detection, MEE</a></h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Permite establecer metas y monitorearlas en el tiempo.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/meta.png" alt="meta"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>La ocupación (\(\psi\)) y la probabilidad de detección (\(p\))</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>La ocupación (\(\psi\)) que es un reflejo de otros parámetros poblacionales importantes como la densidad.</h3>
+
+<ul class = "build incremental">
+<li>1. (\(\psi\)) es la proporción del área muestreada que está ocupada por la especie.</li>
+<li>2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie cuando esta se encuentra en ese lugar. </li>
+<li>3. Los <strong>muestreos repetidos</strong> son clave.</li>
+</ul>
+
+<h3>(\(\psi\)) esta influenciada por variables ambientales  (<strong>Covariables</strong>) como cobertura vegetal, altitud, precipitacion, etc.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Así debería verse una tabla de datos con muestreos repetidos.</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">visita 1</th>
+<th align="right">visita 2</th>
+<th align="right">visita 3</th>
+<th align="right">visita 4</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">sitio 1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">sitio 2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">sitio 3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">sitio X</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Ejemplo del calculo de \(\psi\) y \(p\)</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Método frecuentista (Máxima verosimilitud).</h3>
+
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">v 1</th>
+<th align="right">v 2</th>
+<th align="right">v 3</th>
+<th align="right">v 4</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s 1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">s 2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s 3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s X</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <table><thead>
+<tr>
+<th><strong>Historias de detección</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pr(\(H_{1}\)=1001)= \(\psi\) × p1(1–p2)(1–p3)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{2}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{3}\)=1100)= \(\psi\) × p1p2(1–p3)(1–p4)</td>
+</tr>
+<tr>
+<td>Pr(\(H_{x}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+</tbody></table>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Estas Historias se combinan en un solo modelo de maxima verosimilitud</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th><strong>Historias de detección</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Pr(\(H_{1}\)=1001)= \(\psi\) × p1(1–p2)(1–p3)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{2}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+<tr>
+<td>Pr(\(H_{3}\)=1100)= \(\psi\) × p1p2(1–p3)(1–p4)</td>
+</tr>
+<tr>
+<td>Pr(\(H_{x}\)=0000)= \(\psi\) × (1–p2)(1–p2)(1–p3)(1–p4)p4</td>
+</tr>
+</tbody></table>
+
+<p><br />
+<br /></p>
+
+<p>\[
+\begin{aligned}
+L(\psi, p \mid H_{1},...,H_{x}) =  \prod_{i=1}^{x} Pr (H_{i})
+\end{aligned}
+\]</p>
+
+<ul class = "build incremental">
+<li>El modelo admite incorporar covariables para explicar \(\psi\) y \(p\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>El mismo ejemplo del calculo de \(\psi\) y \(p\)</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Método Bayesiano.</h3>
+
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">v 1</th>
+<th align="right">v 2</th>
+<th align="right">v 3</th>
+<th align="right">v 4</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s 1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">s 2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s 3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">s X</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Es importante entender que hay dos procesos que se pueden modelar de forma jerarquica.</p>
+
+<ul class = "build incremental">
+<li>El proceso ecológico (\(\psi\)) sigue una distribución Bernoulli.</li>
+<li>El modelo de observación (\(p\)) sigue una distribución Bernoulli.</li>
+<li>La probabilidad de observar la especie dada que esta presente: \(p\)=Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)</li>
+<li>La probabilidad de ocurrencia: \(\psi\) =Pr(\(z_{i}\)=1)</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Un modelo jerarquico (Bayesiano)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/Occu_Bayes.png" alt="Full Occu Bayes"></p>
+
+<h3>Admite covariables</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Cual uso? Maxima verosimilitud o Bayesiano?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>ML</h3>
+
+<ul class = "build incremental">
+<li>Paquete <a href="https://cran.r-project.org/web/packages/unmarked/index.html">unmarked</a> en R</li>
+<li>Admite seleccion &quot;automatica&quot; de modelos con AIC</li>
+<li>Problemas con matrices que tienen muchos NAs</li>
+<li>Problema Hesian y estimados ok.</li>
+<li>Dificultad de 1 a 10: 3 si ya sabes R.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Bayesiano</h3>
+
+<ul class = "build incremental">
+<li>Lenguaje BUGS o Stan, llamado desde R</li>
+<li>La seleccion de modelos no es tan sencilla, BIC no es adecuado</li>
+<li>No tiene tantos problemas con muchos NAs en la matriz<br></li>
+<li>Los estimados son mas precisos.</li>
+<li>Dificultad de 1 a 10: 7 si ya sabes R.</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-25" style="background:#202020;">
+  <hgroup>
+    <h2>De donde vienen los modelos jerarquicos?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2><a href="https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products">Andy Royle</a></h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="https://prd-wret.s3-us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/content_grid/public/thumbnails/image/Dr%20Andy%20Royle.jpg" alt="Andy Royle"></p>
+
+<p>Padre junto con (James Nichols and Darryl MacKenzie) de los modelos de ocupación</p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Autor del libro azul (2008).</h3>
+
+<p><img src="https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780123740977.jpg" alt="libro azul"></p>
+
+<p>Libro de nivel avanzado con muchos detalles, formulas, ejemplos y código en R y lenguaje BUGS.</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Libro de la libelula (2015).</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>Recientemente publicado con <a href="http://store.elsevier.com/Marc-Kery/ELS_1059944/">Marc Kery</a>.</h4>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="https://images-na.ssl-images-amazon.com/images/I/513ulKHhAKL._SX404_BO1,204,203,200_.jpg" alt="libro libelula"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tutorial, comenzando con un nivel basico de R hasta modelos avanzados y su implementacion en R y lenguaje BUGS.  </p>
+
+<p><a class="btn btn-large btn-danger" rel="popover" data-content="No. Hay modelos jerarquicos que no son Bayesianos." data-original-title="A Title" id='example'>Son todos los modelos jerarquicos Bayesianos ?</a></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="alfinal" style="background:url(assets/img/baby-84626_1280.jpg);">
+  <hgroup>
+    <h2>Manos a la obra!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="https://www.r-project.org/Rlogo.png" alt="Coding now"></p>
+
+<ul class = "build incremental">
+<li>Nivel?</li>
+<li>Objetos?, Vectores?, DataFrame?</li>
+<li>Loops?, Funciones?</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Cronograma</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th>Día</th>
+<th>Tema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Viernes</td>
+<td>1. Introducción a R</td>
+</tr>
+<tr>
+<td></td>
+<td>2. <a href="https://dlizcano.github.io/IntroOccuPresent/R_toModel.html">R como herramienta de modelado</a></td>
+</tr>
+<tr>
+<td>Viernes</td>
+<td>3. <a href="https://dlizcano.github.io/IntroOccuPresent/modelOccuData.html">El concepto de ocupación y su modelado</a></td>
+</tr>
+<tr>
+<td></td>
+<td>4. Modelo occu. estático - <a href="https://dlizcano.github.io/IntroOccuPresent/unmarked_101.html"> unmarked101</a></td>
+</tr>
+<tr>
+<td>Sab Mañ</td>
+<td>5. Modelo occu. estático - <a href="https://dlizcano.github.io/IntroOccuBook/">Sim Machalilla</a></td>
+</tr>
+<tr>
+<td></td>
+<td>6. Modelo occu. estático - <a href="https://dlizcano.github.io/IntroOccuBook/unmarked.html#poniendo-los-datos-en-unmarked">Unm Machalilla</a></td>
+</tr>
+<tr>
+<td>Sab Tar</td>
+<td><em>7. Modelo occu. estático - Bayes Machalilla</em></td>
+</tr>
+<tr>
+<td></td>
+<td>9. Preguntas y Datos del mundo real - <a href="https://github.com/dlizcano/IntroOccuPresent/raw/gh-pages/code/Pecari.rar">Pecari</a></td>
+</tr>
+<tr>
+<td></td>
+<td>10. <a href="https://dlizcano.github.io/IntroOccuPresent/Otros_modelos_jerarquicos.html">Otros modelos jerárquicos</a></td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://i.giphy.com/fQZX2aoRC1Tqw.gif" alt="Coding fast"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="towork" style="background:url(assets/img/children-593313_1280.jpg);">
+  <hgroup>
+    <h2>Al final: Modelo de ocupacion-detección... (Bayesiano espacial).</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Gracias Prof. Alexander, Alejandra'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='<a href="https://tinyurl.com/ycezxwzl">https://tinyurl.com/ycezxwzl</a>'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Distribución y abundancia'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='El mapa que todos queremos!'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Contar Animales'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Contar Animales'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Contar Animales'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Abundancia relativa: Una variable indicadora del estado de la población'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='No se cuantos hay pero si donde hay mas y donde hay menos.'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Pero debo tener en cuenta que:'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Los muestreos no son infalibles'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Como ocurre el error de detección'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Mackenzie et al 2002, 2003 al rescate'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Libro y programa presence (2006)'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='La ocupación en acción.'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Permite establecer metas y monitorearlas en el tiempo.'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='La ocupación (\(\psi\)) y la probabilidad de detección (\(p\))'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Así debería verse una tabla de datos con muestreos repetidos.'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Ejemplo del calculo de \(\psi\) y \(p\)'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Estas Historias se combinan en un solo modelo de maxima verosimilitud'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='El mismo ejemplo del calculo de \(\psi\) y \(p\)'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Un modelo jerarquico (Bayesiano)'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Cual uso? Maxima verosimilitud o Bayesiano?'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='De donde vienen los modelos jerarquicos?'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='<a href="https://www.usgs.gov/staff-profiles/andy-royle?qt-staff_profile_science_products=0#qt-staff_profile_science_products">Andy Royle</a>'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Libro de la libelula (2015).'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Manos a la obra!'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Cronograma'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Al final: Modelo de ocupacion-detección... (Bayesiano espacial).'>
+         30
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="test.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
