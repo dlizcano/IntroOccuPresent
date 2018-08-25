@@ -61,6 +61,12 @@ La Ecología:  Estudio de las interacciones que determinan la __distribución y 
 
 ---
 
+## Como contar animales siempre ha sido una pregunta interesante!
+![Count Animals](assets/img/Count.jpg)
+
+
+---
+
 ## El mapa que todos queremos!
 ![Mapa de densidad](assets/img/kanguro.png)
 
@@ -111,12 +117,277 @@ La Ecología:  Estudio de las interacciones que determinan la __distribución y 
 ![sampling error](https://media.giphy.com/media/rL5fh3o1NFl28/giphy.gif)
 
 
-### La detectabilidad, una combinacion de factores que depende de:
+## La detectabilidad, una combinacion de factores que depende de:
 
 > - 1. Las condiciones del muestreo (clima, hora)
 > - 2. La habilidad del observador (sensor)
 > - 3. La biología de la especie que se muestrea
 > - Este error debe considerarse para evitar sesgos en las estimaciones de abundancia.
+
+--- &twocol
+
+## Ejemplo: 50 sitios muestrados
+
+*** =left
+
+<table class="table table-striped table-bordered" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> 1 </th>
+   <th style="text-align:right;"> 2 </th>
+   <th style="text-align:right;"> 3 </th>
+   <th style="text-align:right;"> 4 </th>
+   <th style="text-align:right;"> 5 </th>
+   <th style="text-align:right;"> 6 </th>
+   <th style="text-align:right;"> 7 </th>
+   <th style="text-align:right;"> 8 </th>
+   <th style="text-align:right;"> 9 </th>
+   <th style="text-align:right;"> 10 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+### Ocupación 50%
+
+*** =right
+
+
+
+
+--- &twocol
+
+## Ejemplo: 50 sitios muestrados
+
+*** =left
+
+<table class="table table-striped table-bordered" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> 1 </th>
+   <th style="text-align:right;"> 2 </th>
+   <th style="text-align:right;"> 3 </th>
+   <th style="text-align:right;"> 4 </th>
+   <th style="text-align:right;"> 5 </th>
+   <th style="text-align:right;"> 6 </th>
+   <th style="text-align:right;"> 7 </th>
+   <th style="text-align:right;"> 8 </th>
+   <th style="text-align:right;"> 9 </th>
+   <th style="text-align:right;"> 10 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+### Ocupación 50%
+
+*** =right
+<table class="table table-striped table-bordered" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> 1 </th>
+   <th style="text-align:right;"> 2 </th>
+   <th style="text-align:right;"> 3 </th>
+   <th style="text-align:right;"> 4 </th>
+   <th style="text-align:right;"> 5 </th>
+   <th style="text-align:right;"> 6 </th>
+   <th style="text-align:right;"> 7 </th>
+   <th style="text-align:right;"> 8 </th>
+   <th style="text-align:right;"> 9 </th>
+   <th style="text-align:right;"> 10 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+
+### Ocupación 60%
+
+Es un error importante que debe considerarse en los muestreos!!! 
+
 
 ---
 
@@ -166,24 +437,58 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 
 ### La ocupación ($\psi$) que es un reflejo de otros parámetros poblacionales importantes como la densidad. 
 
-> - 1. ($\psi$) es la proporción del área muestreada que está ocupada por la especie.
+> - 1. ($\psi$) es la __proporción del área muestreada que está ocupada por la especie__.
 > - 2. Visitando el sitio varias veces puedo estar mas seguro que detecto la especie cuando esta se encuentra en ese lugar. 
 > - 3. Los __muestreos repetidos__ son clave.
   
-###  ($\psi$) esta influenciada por variables ambientales  (__Covariables__) como cobertura vegetal, altitud, precipitacion, etc.
+###  ($\psi$ y $p$) estan influenciadas por variables ambientales  (__Covariables__) como cobertura vegetal, altitud, precipitacion, etc.
 
 ---
 
 ## Así debería verse una tabla de datos con muestreos repetidos.
   
 
-
-|        | visita 1| visita 2| visita 3| visita 4|
-|:-------|--------:|--------:|--------:|--------:|
-|sitio 1 |        1|        0|        0|        1|
-|sitio 2 |        0|        0|        0|        0|
-|sitio 3 |        1|        1|        0|        0|
-|sitio X |        0|        0|        0|        0|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> visita 1 </th>
+   <th style="text-align:right;"> visita 2 </th>
+   <th style="text-align:right;"> visita 3 </th>
+   <th style="text-align:right;"> visita 4 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> sitio 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sitio 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sitio 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sitio X </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
 
 
 
@@ -197,13 +502,47 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
   
 *** =left
 
-
-|    | v 1| v 2| v 3| v 4|
-|:---|---:|---:|---:|---:|
-|s 1 |   1|   0|   0|   1|
-|s 2 |   0|   0|   0|   0|
-|s 3 |   1|   1|   0|   0|
-|s X |   0|   0|   0|   0|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> v 1 </th>
+   <th style="text-align:right;"> v 2 </th>
+   <th style="text-align:right;"> v 3 </th>
+   <th style="text-align:right;"> v 4 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> s 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s X </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
 
 *** =right
 
@@ -211,9 +550,9 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 | **Historias de detección**                            |
 |-------------------------------------------------------|
 | Pr($H_{1}$=1001)= $\psi$ × p1(1–p2)(1–p3)p4           |
-| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |
+| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)   |
 | Pr($H_{3}$=1100)= $\psi$ × p1p2(1–p3)(1–p4)           |  
-| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |  
+| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)   |  
 
   
 
@@ -226,9 +565,9 @@ Populariza la ocupación ($\psi$) como proxi de la abundancia teniendo en cuenta
 | **Historias de detección**                            |
 |-------------------------------------------------------|
 | Pr($H_{1}$=1001)= $\psi$ × p1(1–p2)(1–p3)p4           |
-| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |
+| Pr($H_{2}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)   |
 | Pr($H_{3}$=1100)= $\psi$ × p1p2(1–p3)(1–p4)           |  
-| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)p4 |  
+| Pr($H_{x}$=0000)= $\psi$ × (1–p2)(1–p2)(1–p3)(1–p4)   |  
 
 <br />
 <br />
@@ -251,13 +590,47 @@ $$
   
 *** =left
 
-
-|    | v 1| v 2| v 3| v 4|
-|:---|---:|---:|---:|---:|
-|s 1 |   1|   0|   0|   1|
-|s 2 |   0|   0|   0|   0|
-|s 3 |   1|   1|   0|   0|
-|s X |   0|   0|   0|   0|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> v 1 </th>
+   <th style="text-align:right;"> v 2 </th>
+   <th style="text-align:right;"> v 3 </th>
+   <th style="text-align:right;"> v 4 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> s 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s 2 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s 3 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> s X </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
 
 *** =right
  
@@ -363,13 +736,13 @@ Mas de 700 paginas explicando claramente de donde viene la teoria, en estilo tut
 
 | Día         |  Tema                                          |
 |-------------|------------------------------------------------|
-|Viernes      | 1. Introducción a R                            |
+|Domingo      | 1. Introducción a R                            |
 |             | 2. [R como herramienta de modelado](https://dlizcano.github.io/IntroOccuPresent/R_toModel.html)               |
-|Viernes      | 3. [El concepto de ocupación y su modelado](https://dlizcano.github.io/IntroOccuPresent/modelOccuData.html)            |
+|Lunes      | 3. [El concepto de ocupación y su modelado](https://dlizcano.github.io/IntroOccuPresent/modelOccuData.html)            |
 |             | 4. Modelo occu. estático - [ unmarked101](https://dlizcano.github.io/IntroOccuPresent/unmarked_101.html)          | 
-|Sab Mañ      | 5. Modelo occu. estático - [Sim Machalilla](https://dlizcano.github.io/IntroOccuBook/)       |
+|Lunes Tar      | 5. Modelo occu. estático - [Sim Machalilla](https://dlizcano.github.io/IntroOccuBook/)       |
 |             | 6. Modelo occu. estático - [Unm Machalilla](https://dlizcano.github.io/IntroOccuBook/unmarked.html#poniendo-los-datos-en-unmarked)      |
-|Sab Tar      | _7. Modelo occu. estático - Bayes Machalilla_  |
+|Martes Mañ      | _7. Modelo occu. estático - Bayes Machalilla_  |
 |             | 9. Preguntas y Datos del mundo real - [Pecari](https://github.com/dlizcano/IntroOccuPresent/raw/gh-pages/code/Pecari.rar)   |
 |             | 10. [Otros modelos jerárquicos](https://dlizcano.github.io/IntroOccuPresent/Otros_modelos_jerarquicos.html)      |
 
