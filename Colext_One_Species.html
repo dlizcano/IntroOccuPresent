@@ -879,13 +879,13 @@ Modelo de Ocupacion Dinamico
 <blockquote>
 <p>MacKenzie, D. I., J. D. Nichols, J. E. Hines, M. G. Knutson, and A. B. Franklin. 2003. Estimating site occupancy, colonization, and local extinction when a species is detected imperfectly. Ecology 84:2200–2207.</p>
 </blockquote>
-<p><img src="C:/Users/usuario/Desktop/Curso_Salvador_Multi_Season/img/fig1.jpg" alt="image" /></p>
+<p><img src="img/fig1.jpg" alt="image" /></p>
 <h2 id="parámetros-adicionales">Parámetros Adicionales</h2>
 <p>Este modelo incluye dos parámetros adicionales que representan la colonización y extinción de cada sitio. Estos dos parámetros adicionales pueden ser modelados con covariables que varían año a año.</p>
 <p>Antes de entrar en materia con el modelo dinámico vale la pena que revisemos el modelo básico de ocupación.</p>
 <h2 id="recordemos-el-modelo-estático">Recordemos el Modelo estático</h2>
 <p>Recordemos que el modelo básico de ocupación de MacKenzie et. al (2002), también es conocido como el modelo estático de ocupación. Este modelo se aplica a una sola especie, y por lo general en una sola temporada.</p>
-<p><img src="C:/Users/usuario/Desktop/Curso_Salvador_Multi_Season/img/Occu_Bayes.png" alt="image" /></p>
+<p><img src="img/Occu_Bayes.png" alt="image" /></p>
 <p>Donde<br />
 ψ es la ocupación y p la probabilidad de detección. Con<br />
 β como el coeficiente de la regresión para las co-variables de la ocupación y<br />
@@ -893,7 +893,7 @@ Modelo de Ocupacion Dinamico
 <p>Si desean conocer en detalle el modelo estático y saber más del poder y potencial de las simulaciones en ecología, les recomiendo seguir el <a href="https://dlizcano.github.io/IntroOccuBook/example.html">Tutorial Ubicado en este enlace</a>.</p>
 <h2 id="recordemos-la-forma-de-la-distribución-bernoulli">Recordemos la forma de la distribución Bernoulli!</h2>
 <p>La distribución de Bernoulli (o distribución dicotómica), nombrada así por el matemático suizo Jacob Bernoulli (1655-1705).</p>
-<p><img src="C:/Users/usuario/Desktop/Curso_Salvador_Multi_Season/img/jacob_bernoulli.jpg" alt="image" /></p>
+<p><img src="img/jacob_bernoulli.jpg" alt="image" /></p>
 <p>Esta es una distribución de probabilidad discreta, que toma valor 1 para la probabilidad de éxito (p) y valor 0 para la probabilidad de fracaso (q=1-p).</p>
 <p>La distribución de Bernoulli es un caso particular de la distribución binomial, pero con solo dos posibles resultados (éxito o fracaso) unos y ceros.</p>
 <blockquote>
@@ -938,14 +938,14 @@ ggplot(daber, aes(x=estimado)) +
 <p><span class="math inline"><em>y</em><sub><em>i</em><em>j</em><em>t</em></sub> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>z</em><sub><em>i</em></sub> * <em>p</em><sub><em>i</em>, <em>t</em><em>j</em></sub>)</span> Proceso de Observación</p>
 <p>con sitio i durante el muestreo j en el tiempo t (años)</p>
 <h3 id="modelo-dinámico-considerando-colonización-y-extinción">Modelo Dinámico considerando colonización y extinción</h3>
-<p><img src="C:/Users/usuario/Desktop/Curso_Salvador_Multi_Season/img/colext.png" alt="image" /></p>
+<p><img src="img/colext.png" alt="image" /></p>
 <p><span class="math inline"><em>z</em><sub><em>i</em><em>t</em></sub> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>z</em><sub><em>i</em>, <em>t</em> − 1<em>ϕ</em><em>i</em><em>t</em></sub> + (1 − <em>z</em><sub><em>i</em>, <em>t</em> − 1</sub>)<em>γ</em><sub><em>i</em>, <em>t</em></sub>)</span> Proceso Ecológico</p>
 <p><span class="math inline"><em>y</em><sub><em>i</em><em>j</em><em>t</em></sub> ∼ <em>B</em><em>e</em><em>r</em><em>n</em><em>o</em><em>u</em><em>l</em><em>l</em><em>i</em>(<em>z</em><sub><em>i</em><em>t</em></sub> * <em>p</em><sub><em>i</em><em>j</em><em>t</em></sub>)</span> Proceso de Observación</p>
 <h4 id="de-forma-lineal-1">De forma Lineal</h4>
 <p>logit(Ψi,1) = α0 + α1xi1 + . . . + αUxiU.</p>
 <p>Ψi,t|zi,t−1 = zi,t−1 × (1 −<span class="math inline"><em>ϵ</em><sub><em>i</em></sub></span>,t−1) + (1 − zi,t−1) × <span class="math inline"><em>γ</em><sub><em>i</em></sub></span>,t−1, for t &gt; 1.</p>
 <h2 id="la-función-colext-del-paquete-unmarked">La función Colext del paquete unmarked</h2>
-<img src="C:/Users/usuario/Desktop/Curso_Salvador_Multi_Season/img/unmarked.png" alt="image" />
+<img src="img/unmarked.png" alt="image" />
 </div>
 </div>
 <div class="navbar navbar-fixed-bottom navbar-inverse">
