@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The concept of occupation and its modeling</title>
+  <meta charset="utf-8">
+  <meta name="description" content="The concept of occupation and its modeling">
+  <meta name="author" content="Diego J. Lizcano, Ph.D.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    
+  <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/Logo-OTS.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/OTS-logo_small.png">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>The concept of occupation and its modeling</h1>
+    <h2>Static model of occupation</h2>
+    <p>Diego J. Lizcano, Ph.D.<br/>OTS, Palo Verde</p>
+  </hgroup>
+  
+    <a href="https://github.com/dlizcano/IntroOccuPresent/zipball/gh-pages" class="example">
+     Download
+    </a>
+  
+  <article></article>  
+      
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h2>Models and simulations in ecology</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>A model in ecology is the mathematical description of an ecological system.</p></li>
+<li><p>When the description is done with a practical purpose it is called simulation.</p></li>
+<li><p>More about <a href="http://www.planta.cn/forum/files_planta/an_introduction_to_mathematical_models_in_ecology_336.pdf">models in ecology</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>Simulations are simplified versions of a real system, in which we can test how certain parameters vary, affecting the estimates of other parameters.</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code>All models are wrong but some are useful.
+George Box, 1978. British statistician.
+Statististics prof. Univ Princeton
+Student of Egon Pearson
+Box-Cox transformation
+</code></pre>
+
+<p>More about <a href="https://en.wikipedia.org/wiki/George_E._P._Box">George Box</a> </p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="https://s3.amazonaws.com/media-p.slid.es/uploads/402520/images/2417431/Pox.png"  align="right" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h1>Why simulations are useful:</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li>I know the true parameters.</li>
+<li>They are a good way to learn.</li>
+<li>We can calibrate a model.</li>
+<li>By being able to simulate data under a certain model, it is guaranteed that one understands the model, its restrictions and limitations.</li>
+<li>They allow verifying the quality of the estimates, as well as the precision and the effect of the sample size.</li>
+<li>We can visualize how identifiable the parameters are in more complex models.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/fig/statmodel-1.png" alt="plot of chunk statmodel"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="slide-4" style="background:black;">
+  
+  <hgroup>
+    <h2>Let&#39;s do a simulation of occupancy (\(\psi\)) and detectability (<em>p</em>).</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="slide-5" style="background:black;">
+  
+  <hgroup>
+    <h2>Imitate the way the measures of interest originate. The occupancy (\(\psi\)) and the detectability (<em>p</em>).</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h2>Mechanistic approximation (mechanism).</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  
+  <hgroup>
+    <h1>There are two processes</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h2>proc. ecological <em>z</em>.</h2>
+
+<p>Which governs the presence of the species.</p>
+
+<ul class = "build incremental">
+<li>The species is (<em>z</em>=1), or is not (<em>z</em>=0) in the site. Simulated from a Bernoulli distribution.</li>
+</ul>
+
+<p><img src="assets/fig/occumodel-1.png" alt="plot of chunk occumodel"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h2>proc. of observation <em>y</em>.</h2>
+
+<p>Which governs the observation of the species.</p>
+
+<ul class = "build incremental">
+<li>The species is observed (<em>p</em>=1), if the species is present. Conditional probability. Simulated with a Bernoulli distribution.</li>
+</ul>
+
+<p><img src="assets/fig/obsmodel-1.png" alt="plot of chunk obsmodel"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  
+  <hgroup>
+    <h2>It is important to understand that both processes are linked in a hierarchical way.</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/img/hmodel.png"  align="right" /></p>
+
+<ul class = "build incremental">
+<li><p>The ecological process (\(\psi\)) follows a Bernoulli distribution.</p></li>
+<li><p>The observation model (\(p\)) follows a Bernoulli distribution.</p></li>
+<li><p>The probability of occurrence is also a proportion (occupancy):</p></li>
+</ul>
+
+<p>\(\psi\) = Pr(\(z_{i}\)=1)  </p>
+
+<ul class = "build incremental">
+<li>The probability of observing the species given that the species is present is:<br></li>
+</ul>
+
+<p>\(p\) = Pr(\(y_{i}\)=1 \(\mid\) \(z_{i}\)=1)  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  
+  <hgroup>
+    <h2>Now let&#39;s play around with the Bernoulli distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>is a variation of the binomial distribution</h3>
+
+<h4>Let&#39;s vary ni and pi and see how the estimated mean (blue) approaches pi</h4>
+
+<pre><code class="r">ni&lt;-10 # numero de datos
+pi&lt;- 0.5 # probabilidad (~proporcion de unos)
+# Generemos datos con esa informacion 
+daber&lt;-data.frame(estimado=rbinom(ni, 1, pi)) 
+# Grafiquemos 
+library(ggplot2)
+ggplot(daber, aes(x=estimado)) + 
+    geom_histogram(aes(y=..density..), # Histograma y densidad 
+                   binwidth=.1, # Ancho del bin
+                   colour=&quot;black&quot;, fill=&quot;white&quot;) + 
+        geom_vline(aes(xintercept=mean(estimado, na.rm=T)), 
+          color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1) # media en azul
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="slide-9" style="background:#202020;">
+  
+  <hgroup>
+    <h2>Let&#39;s change the approximation. Let&#39;s study the relationship from the data and the covariates</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  
+  <hgroup>
+    <h2>Relationship parameters and covariates</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Occupancy and covariates</h3>
+
+<ul class = "build incremental">
+<li><p>The occupancy (\(\psi\)) is a set of 1s and 0s.</p></li>
+<li><p>Covariates can be continuous or discrete.</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="left">sitio</th>
+<th align="left">psi</th>
+<th align="left">cov1</th>
+<th align="left">cov2</th>
+<th align="left">cov3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">1.5</td>
+<td align="left">bosque</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">15</td>
+<td align="left">1.1</td>
+<td align="left">cafe</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">20</td>
+<td align="left">5.5</td>
+<td align="left">bosque</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left">30</td>
+<td align="left">2.1</td>
+<td align="left">cacao</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">40</td>
+<td align="left">2.2</td>
+<td align="left">bosque</td>
+</tr>
+</tbody></table>
+
+<h4>Logistic regression</h4>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Observation and covariates</h3>
+
+<ul class = "build incremental">
+<li><p>The Observations are a set of 1s and 0s.</p></li>
+<li><p>Covariates can be continuous or discrete.</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="left">obs</th>
+<th align="left">cov1</th>
+<th align="left">cov2</th>
+<th align="left">cov3</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">1.5</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">15</td>
+<td align="left">1.1</td>
+<td align="left">soleado</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">20</td>
+<td align="left">5.5</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">30</td>
+<td align="left">2.1</td>
+<td align="left">nublado</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">40</td>
+<td align="left">2.2</td>
+<td align="left">soleado</td>
+</tr>
+</tbody></table>
+
+<h4>Logistic regression</h4>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  
+  <hgroup>
+    <h2>Logistic regression</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <pre><code class="r">data(mtcars)
+obs&lt;-mtcars$vs
+cov1&lt;-mtcars$mpg
+table3&lt;-cbind.data.frame (obs,cov1)
+library(ggplot2)
+ggplot(table3, aes(x=cov1, y=obs)) + geom_point() + 
+  geom_smooth(method = &quot;glm&quot;, method.args = list(family = &quot;binomial&quot;))
+</code></pre>
+
+<p><img src="assets/fig/logist-1.png" alt="plot of chunk logist"></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="hundred50" id="slide-12" style="background:;">
+  
+  <hgroup>
+    <h1>Logistic regression allows to find the relationship between a binary variable and covariates.</h1>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>The logistic regression has the form:</p>
+
+<p>\(y = { 1 \over 1 + e^{ -(\alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon) } }\)</p>
+
+<p>Applying the &quot;algebraic trick&quot; of the logit function, it takes the form:</p>
+
+<p>$ logit(y) = \alpha + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon$</p>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  
+  <hgroup>
+    <h2>Putting it all together...</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src="assets/img/Occu_Bayes.png" alt="Coding now"></p>
+
+<ul class = "build incremental">
+<li>Pass to occu model in unmarked</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  
+  <hgroup>
+    <h2>Cronograma</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <table><thead>
+<tr>
+<th>Day</th>
+<th>Topic</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Tuesday 28 pm</td>
+<td>Remembering R</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://dlizcano.github.io/IntroOccuPresent/R_toModel_E.html">R as model tool</a></td>
+</tr>
+<tr>
+<td>Wednesday 29 am</td>
+<td><a href="https://dlizcano.github.io/IntroOccuPresent/modelOccuData_E.html">Occupancy concept</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Intro Occu Static model - <a href="https://dlizcano.github.io/IntroOccuPresent/unmarked_101_E.html">unmarked101</a></td>
+</tr>
+<tr>
+<td>Wednesday 29 pm</td>
+<td>Static Model in deep I- <a href="https://dlizcano.github.io/occu_book/">Sim Machalilla</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Static Model in deep II- <a href="https://dlizcano.github.io/occu_book/unmarked.html">Data in unmarked</a></td>
+</tr>
+<tr>
+<td>Thursday 30 am</td>
+<td>Questions. Real World Data - <a href="https://github.com/dlizcano/IntroOccuPresent/raw/gh-pages/code/Pecari.rar">Deer</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://dlizcano.github.io/IntroOccuPresent/Otros_modelos_jerarquicos.html">More models</a></td>
+</tr>
+</tbody></table>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="http://i.giphy.com/fQZX2aoRC1Tqw.gif" alt="Coding fast"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="segue" id="towork" style="background:url(assets/img/children-593313_1280.jpg);">
+  
+  <hgroup>
+    <h2>At the end: Spatially Explicit Bayesian occupancy model.</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Models and simulations in ecology'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Simulations are simplified versions of a real system, in which we can test how certain parameters vary, affecting the estimates of other parameters.'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Why simulations are useful:'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Let&#39;s do a simulation of occupancy (\(\psi\)) and detectability (<em>p</em>).'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Imitate the way the measures of interest originate. The occupancy (\(\psi\)) and the detectability (<em>p</em>).'>
+         5
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='There are two processes'>
+         6
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='It is important to understand that both processes are linked in a hierarchical way.'>
+         7
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Now let&#39;s play around with the Bernoulli distribution'>
+         8
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Let&#39;s change the approximation. Let&#39;s study the relationship from the data and the covariates'>
+         9
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Relationship parameters and covariates'>
+         10
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Logistic regression'>
+         11
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Logistic regression allows to find the relationship between a binary variable and covariates.'>
+         12
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Putting it all together...'>
+         13
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Cronograma'>
+         14
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='At the end: Spatially Explicit Bayesian occupancy model.'>
+         15
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="test.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
