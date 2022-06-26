@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>R as a modeling tool</title>
+  <meta charset="utf-8">
+  <meta name="description" content="R as a modeling tool">
+  <meta name="author" content="Diego J. Lizcano, Ph.D.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    
+  <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/Logo-OTS.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  
+  <aside class="gdbar">
+    <img src="assets/img/OTS-logo_small.png">
+  </aside>
+  
+  <hgroup class="auto-fadein">
+    <h1>R as a modeling tool</h1>
+    <h2>Models 101</h2>
+    <p>Diego J. Lizcano, Ph.D.<br/>Unillanos, Villavicencio</p>
+  </hgroup>
+  
+    <a href="https://github.com/dlizcano/IntroOccuPresent/zipball/gh-pages" class="example">
+     Download
+    </a>
+  
+  <article></article>  
+      
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  
+  <hgroup>
+    <h2>Models in R</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>Simplification of a real system.</p>
+
+<p>It allows us to understand how the parameters interact or are affected if we vary something.</p>
+
+<ul class = "build incremental">
+<li>Mean model</li>
+<li>Linear regression model</li>
+<li>Logistic regression model</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  
+  <hgroup>
+    <h2>Mean model</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>How does the sample size affect the distribution of the mean? We will use the iris dataset from R and the petal length column.</p>
+
+<pre><code class="r">str(iris)
+iter &lt;- 1000 # Numero de iteraciones
+n &lt;- 1 # numero de datos que muestreo. Variar hasta 150
+means &lt;- rep(NA, iter) # aca almaceno las medias de cada iteracion
+
+for (i in 1:iter){
+  d &lt;- sample(iris$Petal.Length, n) # sample toma n (1) datos 
+  means[i] &lt;- mean(d) # saca la media y guarda en means 
+}
+
+hist(means)
+abline(v=mean(iris$Petal.Length), lty=2, lwd=3, col=&quot;blue&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  
+  <hgroup>
+    <h2>Algebra of linear regression model</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><br /></p>
+
+<p>\[
+\begin{aligned}
+y = \alpha + \beta x + \epsilon
+\end{aligned}
+\]</p>
+
+<ul class = "build incremental">
+<li><p>where \(\alpha\) and \(\beta\) are model parameters and \(\epsilon\) is the model error.</p></li>
+<li><p>\(\alpha\) corresponds to the intercept</p></li>
+<li><p>\(\beta\) corresponds to the coefficient of x (slope).</p></li>
+</ul>
+
+<h2>- when \(\beta\) = 0, there is no significant relationship between the variables x and y.</h2>
+</blockquote>
+
+<h2>Linear regression model</h2>
+
+<p>We will use the iris dataset from R.</p>
+
+<pre><code class="r">str(iris)
+
+model1 &lt;- lm(Sepal.Length~Petal.Length, data=iris)
+summary(model1)
+library(ggplot2)
+ggplot(model1, aes(x=Petal.Length, y=Sepal.Length)) + geom_point() + 
+  geom_smooth(method = &quot;lm&quot;) # try geom_smooth()
+
+newdato &lt;- data.frame(Petal.Length=seq(4, 7, by=0.1))
+predict(model1, newdata = newdato) # predice sepalo cuando petalo es de 4 a 7
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  
+  <hgroup>
+    <h2>Linear regression model with 2 or more predictors</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>We will use the iris dataset from R. Use + to combine effects. : for A:B interactions; and asterisk (*) for effects and interactions, eg A*B = A+B+A:B</p>
+
+<pre><code class="r">str(iris)
+
+model1a &lt;- lm(Sepal.Length~Petal.Length * Petal.Width, data=iris)
+summary(model1a)
+library(lattice)
+newdato&lt;-expand.grid(list(Petal.Length = seq(4, 7, length.out=100), 
+                          Petal.Width=seq(1, 2.5, length.out=100)))
+newdato$Sepal.Length&lt;-predict(model1a, newdata = newdato) # predice sepalo con petalo de 4 a 7 y 1 a 2.5
+
+levelplot(Sepal.Length~Petal.Length + Petal.Width, data=newdato,
+  xlab = &quot;Petal.Length&quot;, ylab = &quot;Petal.Width&quot;,
+  main = &quot;Surface of Sepal.Length&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  
+  <hgroup>
+    <h2>Logistic regression model</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>We will use the mtcars dataset from R.</p>
+
+<pre><code class="r">data(mtcars)
+
+model2 &lt;- glm(vs~mpg, data=mtcars, family = binomial(link = &quot;logit&quot;))
+summary(model2)
+library(ggplot2)
+ggplot(mtcars, aes(x=mpg, y=vs)) + geom_point() + 
+  geom_smooth(method = &quot;glm&quot;, method.args = list(family = &quot;binomial&quot;))
+
+newdato2 &lt;- data.frame(mpg= seq(20, 30, by=0.5))
+predict(model2, newdata = newdato2, type=&#39;response&#39;) # predice vs cuando mpg es de 20 a 30
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Models in R'>
+         1
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Mean model'>
+         2
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Algebra of linear regression model'>
+         3
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Linear regression model with 2 or more predictors'>
+         4
+      </a>
+    </li>
+    
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Logistic regression model'>
+         5
+      </a>
+    </li>
+    
+    </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="test.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
